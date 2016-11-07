@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.apache.derby.jdbc.EmbeddedDriver; //trytryr
+import org.apache.derby.jdbc.EmbeddedDriver;
 
 public class Database {
 
