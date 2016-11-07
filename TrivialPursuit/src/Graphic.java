@@ -1,26 +1,14 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-
 import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
-
-import javax.swing.JTextArea;
-
 import java.awt.TextField;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
-
-import java.awt.Toolkit;
-
 import javax.swing.ImageIcon;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -58,7 +46,6 @@ public class Graphic {
 	 */
 	private void initialize() {
 		frmTrivialPursuit = new JFrame();
-		frmTrivialPursuit.setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\CPE\\Info\\Projet GL\\Trivial_Pursuit\\index.jpg"));
 		frmTrivialPursuit.setBackground(Color.RED);
 		frmTrivialPursuit.setFont(new Font("Bodoni MT Condensed", Font.PLAIN, 18));
 		frmTrivialPursuit.setForeground(Color.ORANGE);
@@ -107,7 +94,6 @@ public class Graphic {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				//frmTrivialPursuit.setVisible(false);
 				frmTrivialPursuit.dispose();
 				new Game();
 			}
@@ -116,7 +102,7 @@ public class Graphic {
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("src\\uuuut.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("src/gameicon.jpg"));
 		lblNewLabel.setBounds(142, 87, 256, 256);
 		panel.add(lblNewLabel);
 		

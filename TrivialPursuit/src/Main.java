@@ -1,4 +1,4 @@
 
-public class Main { //ertetsdgfdf
+public class Main { 
 
 }

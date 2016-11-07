@@ -1,17 +1,12 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
-
-import javax.swing.JTextArea;
-
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Color;
-
-import javax.swing.JTextPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -60,7 +55,14 @@ public class Game {
 		frmRglesDuJeu.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnJouer = new JButton("Jouer !");
+		JButton btnJouer = new JButton("Valider");
+		btnJouer.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				frmRglesDuJeu.dispose();
+				new Game();
+			}
+		});
 		btnJouer.setBounds(480, 337, 89, 23);
 		panel.add(btnJouer);
 		
