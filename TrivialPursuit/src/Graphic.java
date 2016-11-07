@@ -12,7 +12,6 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-
 public class Graphic {
 
 	private JFrame frmTrivialPursuit;
@@ -46,14 +45,14 @@ public class Graphic {
 	 */
 	private void initialize() {
 		frmTrivialPursuit = new JFrame();
-		frmTrivialPursuit.setBackground(Color.RED);
+		frmTrivialPursuit.setResizable(false);
+		frmTrivialPursuit.setBackground(Color.WHITE);
 		frmTrivialPursuit.setFont(new Font("Bodoni MT Condensed", Font.PLAIN, 18));
-		frmTrivialPursuit.setForeground(Color.ORANGE);
+		frmTrivialPursuit.setForeground(Color.WHITE);
 		frmTrivialPursuit.setTitle("Trivial Pursuit");
 		frmTrivialPursuit.setBounds(100, 100, 450, 300);
 		frmTrivialPursuit.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmTrivialPursuit.setSize(new Dimension (600, 400));
-		frmTrivialPursuit.setResizable(false);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -108,7 +107,7 @@ public class Graphic {
 		
 		JLabel lblTrivialPursuit = new JLabel("Trivial Pursuit");
 		lblTrivialPursuit.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
-		lblTrivialPursuit.setBounds(158, 11, 228, 43);
+		lblTrivialPursuit.setBounds(158, 11, 300, 43);
 		panel.add(lblTrivialPursuit);
 	}
 }
