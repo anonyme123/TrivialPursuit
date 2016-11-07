@@ -116,7 +116,7 @@ public class Graphic {
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("E:\\CPE\\Info\\Projet GL\\Trivial_Pursuit\\uuuut.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sébastien\\git\\TrivialPursuit\\TrivialPursuit\\uuuut.jpg"));
 		lblNewLabel.setBounds(142, 87, 256, 256);
 		panel.add(lblNewLabel);
 		
