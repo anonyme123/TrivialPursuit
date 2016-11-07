@@ -42,7 +42,8 @@ public class Plateau {
 		frmPlateauDuJeu.setTitle("Plateau du jeu");
 		frmPlateauDuJeu.setBounds(100, 100, 450, 300);
 		frmPlateauDuJeu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmPlateauDuJeu.setSize(new Dimension (600, 400));
+		frmPlateauDuJeu.setVisible(true);
+		frmPlateauDuJeu.setSize(new Dimension(1280, 720));
 		frmPlateauDuJeu.setResizable(false);
 		
 		JPanel panel = new JPanel();
