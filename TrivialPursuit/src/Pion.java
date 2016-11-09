@@ -34,6 +34,54 @@ public class Pion {
 				+ ". Il s'agit du pion numéro " + idPion;
 	}
 	
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public float getPositionDepartX() {
+		return positionDepartX;
+	}
+
+	public void setPositionDepartX(float positionDepartX) {
+		this.positionDepartX = positionDepartX;
+	}
+
+	public float getPositionDepartY() {
+		return positionDepartY;
+	}
+
+	public void setPositionDepartY(float positionDepartY) {
+		this.positionDepartY = positionDepartY;
+	}
+
+	public float getPositionArriveX() {
+		return positionArriveX;
+	}
+
+	public void setPositionArriveX(float positionArriveX) {
+		this.positionArriveX = positionArriveX;
+	}
+
+	public float getPositionArriveY() {
+		return positionArriveY;
+	}
+
+	public void setPositionArriveY(float positionArriveY) {
+		this.positionArriveY = positionArriveY;
+	}
+
+	public int getIdPion() {
+		return idPion;
+	}
+
+	public void setIdPion(int idPion) {
+		this.idPion = idPion;
+	}
+
 	public String toString1() {
 		return " Le Pion est de couleur" + couleur +  " a pour coordonnées de en X et Y de : " + positionDepartX +" " + 
 				positionDepartY + ". Il s'agit du pion numéro " + idPion;
