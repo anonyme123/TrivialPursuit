@@ -22,8 +22,8 @@ public class Pion {
 			return true;
 	}
 
-/	public boolean isMoveOk(int xFinal, int yfinal){
-		if(coord.x == coord.x + getNbAleatoire())
+	public boolean isMoveOk(int xFinal, int yfinal){
+		if(coord.x == coord.x  )
 		return false;
 		
 		
