@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -43,32 +44,32 @@ public class TrivialPursuit extends JFrame {
 		startscreen.add(picLabel);
 		
 		TextField joueur1 = new TextField();
-		joueur1.setBounds(112, 108, 56, 19);
+		joueur1.setBounds(112, 108, 69, 19);
 		joueur1.setText("Joueur 1");
 		startscreen.add(joueur1);
 		
 		TextField joueur2 = new TextField();
-		joueur2.setBounds(112, 145, 56, 19);
+		joueur2.setBounds(112, 145, 69, 19);
 		joueur2.setText("Joueur 2");
 		startscreen.add(joueur2);
 		
 		TextField joueur3 = new TextField();
-		joueur3.setBounds(112, 183, 56, 19);
+		joueur3.setBounds(112, 183, 69, 19);
 		joueur3.setText("Joueur 3");
 		startscreen.add(joueur3);
 		
 		TextField joueur4 = new TextField();
-		joueur4.setBounds(112, 218, 56, 19);
+		joueur4.setBounds(112, 218, 69, 19);
 		joueur4.setText("Joueur 4");
 		startscreen.add(joueur4);
 		
 		TextField joueur5 = new TextField();
-		joueur5.setBounds(112, 256, 56, 19);
+		joueur5.setBounds(112, 256, 69, 19);
 		joueur5.setText("Joueur 5");
 		startscreen.add(joueur5);
 		
 		TextField joueur6 = new TextField();
-		joueur6.setBounds(112, 295, 56, 19);
+		joueur6.setBounds(112, 295, 69, 19);
 		joueur6.setText("Joueur 6");
 		startscreen.add(joueur6);
 		
@@ -137,12 +138,19 @@ public class TrivialPursuit extends JFrame {
     }
 
     public static void main(String[] args) {
+    	
+	    try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException | InstantiationException
+				| IllegalAccessException | UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
+
         EventQueue.invokeLater(new Runnable() {
 
             @Override
             public void run() {
                 TrivialPursuit frame = new TrivialPursuit();
-                
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
