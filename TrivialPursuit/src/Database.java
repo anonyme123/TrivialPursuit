@@ -43,19 +43,62 @@ public class Database {
 
          pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
          pstmt.setString(1, "De quel couleur était le cheval blanc d'Henry IV ?");
+         pstmt.setString(2, "Jean-Claude");
+         pstmt.setString(3, "Guy de Maupassant");
+         pstmt.setString(4, "Jean-Paul Sarte");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "Quel conseil régional est présidé par Ségolène Royal depuis 2004 ?");
          pstmt.setString(2, "Noir");
-         pstmt.setString(3, "Blanc");
+         pstmt.setString(3, "Poitou-Charentes");
+         pstmt.setString(4, "Gris");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "Quel nom rime avec Paul-Loup Sulitzer dans \"Foule sentimentale\" de Souchon ?");
+         pstmt.setString(2, "Noir");
+         pstmt.setString(3, "Claudia Schiffer");
+         pstmt.setString(4, "Gris");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "De quel pays Tirana est-elle la capitale ?");
+         pstmt.setString(2, "Noir");
+         pstmt.setString(3, "L'Albanie");
+         pstmt.setString(4, "Gris");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "De quel groupe Jim Morrison était-il le chanteur ?");
+         pstmt.setString(2, "Noir");
+         pstmt.setString(3, "The Doors");
          pstmt.setString(4, "Gris");
          pstmt.setString(5, "Histoire");
          pstmt.setInt(6, 2);
          pstmt.executeUpdate();
 
-         rs = stmt.executeQuery("select * from questions");
+         rs = stmt.executeQuery("select * from questions where category like 'Histoire' order by random() fetch first row only");
          while (rs.next()) {
             System.out.printf("%d %s %s %s %s %s %d\n",
             rs.getInt(1), rs.getString(2),
             rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
          }
+         
+         /*rs = stmt.executeQuery("select * from questions");
+         while (rs.next()) {
+            System.out.printf("%d %s %s %s %s %s %d\n",
+            rs.getInt(1), rs.getString(2),
+            rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+         }*/
 
          //stmt.execute("drop table questions");
 

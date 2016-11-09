@@ -137,7 +137,7 @@ public class TrivialPursuit extends JFrame {
         getContentPane().add(cardPanel, BorderLayout.CENTER);
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
     	
 	    try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -155,5 +155,5 @@ public class TrivialPursuit extends JFrame {
                 frame.setVisible(true);
             }
         });
-    }
+    }*/
 }
