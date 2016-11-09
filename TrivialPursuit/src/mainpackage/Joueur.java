@@ -1,24 +1,23 @@
-//Classe Joueur
+package mainpackage;
 
 public class Joueur {
-	
-	
+
 	//--------------------ATTRIBUTS--------------------
 	public String nom;
-	public int ordre;
-	public int id_pion;
-	//public int nb_camembert; // a redeterminer ???
+	public int numero;
+	public String couleur;
+	public int nb_camembert; 
 	
 	
 	//--------------------METHODES--------------------
 	
 	//CONSTRUCTEUR PAR DEFAUT 
-	public Joueur(String jnom, int jordre, int jpion, int jcam)
+	public Joueur(String nom, int numero, String couleur, int nb_camembert)
 	{
-		this.nom=jnom;
-		this.ordre=jordre;
-		this.id_pion=jpion;
-		this.nb_camembert=jcam;
+		this.nom=nom;
+		this.numero=numero;
+		this.couleur=couleur;
+		this.nb_camembert=nb_camembert;
 		
 	}
 	
@@ -35,32 +34,23 @@ public class Joueur {
 		this.nom = name;
 	}
 	
-	public String toString()
-	{
-		
-	}
-	//----------------------------
 	
-	
-	
-	//LANCER DE
-	public int lancerDe()
+	//METHODES METIERS
+	public void lancerDe()
 	{
 		
 		
 	}
-	
-	//CHOISIR UNE CASE
-	public Case choisirCase() //on choisit une case,id?
+
+	public void bougerPion() 
 	{
 		
 	}
 	
-	public int repondreQuestion()
+	public void repondreQuestion()
 	{
-	
+		
 		
 	}
-	
 
 }
