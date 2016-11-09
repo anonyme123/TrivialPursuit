@@ -31,7 +31,7 @@ public class Pion {
 	public String toString() {
 		return " Le Pion est de couleur" + couleur +  " a pour coordonnées de en X et Y de : " + positionDepartX +" " + 
 				positionDepartY + ", et se déplace en :" + positionArriveX + " "+ positionArriveY
-				+ ".  Il s'agit du pion numéro " + idPion;
+				+ ". Il s'agit du pion numéro " + idPion;
 	}
 	
 	public String toString1() {
