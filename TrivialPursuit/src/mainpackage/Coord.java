@@ -28,7 +28,7 @@ public class Coord implements Serializable {
 		return "[x=" + x + ", y=" + y + "]";
 	}
 	
-	/**
+	/*
 	 * @param x
 	 * @param y
 	 * @return true si les coordonn�es sont valides (dans un plateau de 8*8)

@@ -10,6 +10,13 @@ public class Dé {
 		
 	}
 	
+	public void lancer(){
+		
+		
+		
+	}
+	
+	
 	
 
 }

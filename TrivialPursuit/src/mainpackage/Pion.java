@@ -63,7 +63,7 @@ public class Pion {
 
 	@Override
 	public String toString() {
-		return "Pion [couleur=" + couleur + ", idPion=" + idPion + ", coord=" + coord + "]";
+		return "Pion : couleur=" + couleur + ", idPion=" + idPion + ", coord=" + coord ;
 	}
 
 
