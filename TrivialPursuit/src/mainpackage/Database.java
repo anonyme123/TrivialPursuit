@@ -14,9 +14,9 @@ public class Database {
    public static void main(String[] args) {
       Database e =
          new Database();
-      e.testDerby();
+      e.Derby();
    }
-   public void testDerby() {
+   public void Derby() {
       Connection conn = null;
       PreparedStatement pstmt;
       Statement stmt;
