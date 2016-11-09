@@ -1,4 +1,3 @@
-package mainpackage;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -19,18 +18,16 @@ public class Main {
 
             @Override
             public void run() {
-                IHM frame = new IHM();
+                TrivialPursuit frame = new TrivialPursuit();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
         });
         
-        Pion p1 = new Pion("Bleu", 1, new Coord(5, 4));
+        Pion p1 = new Pion("Bleu", 2, 3, 4, 5, 1);
 		System.out.println(p1.toString());
-		p1.seDeplacer(6, 3);
-		System.out.println(p1.toString());
-		p1.seDeplacer(6, 3);
-		System.out.println(p1.toString());
+		Pion p2 = new Pion("Rouge", 2, 3, 2);
+		System.out.println(p2.toString1());
 
 	}
 
