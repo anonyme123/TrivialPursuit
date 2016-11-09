@@ -49,8 +49,33 @@ public class Database {
          pstmt.setString(5, "Histoire");
          pstmt.setInt(6, 2);
          pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "dsfsdfeur était le cheval blanc d'Henry IV ?");
+         pstmt.setString(2, "Noir");
+         pstmt.setString(3, "Blanc");
+         pstmt.setString(4, "Gris");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
+         
+         pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
+         pstmt.setString(1, "aaaaaaatait le cheval blanc d'Henry IV ?");
+         pstmt.setString(2, "Noir");
+         pstmt.setString(3, "Blanc");
+         pstmt.setString(4, "Gris");
+         pstmt.setString(5, "Histoire");
+         pstmt.setInt(6, 2);
+         pstmt.executeUpdate();
 
-         rs = stmt.executeQuery("select * from questions");
+         /*rs = stmt.executeQuery("select * from questions");
+         while (rs.next()) {
+            System.out.printf("%d %s %s %s %s %s %d\n",
+            rs.getInt(1), rs.getString(2),
+            rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+         }*/
+         
+         rs = stmt.executeQuery("select * from questions where category like 'Histoire' order by random() fetch first row only");
          while (rs.next()) {
             System.out.printf("%d %s %s %s %s %s %d\n",
             rs.getInt(1), rs.getString(2),
