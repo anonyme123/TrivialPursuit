@@ -12,12 +12,12 @@ public class Joueur {
 	//--------------------METHODES--------------------
 	
 	//CONSTRUCTEUR PAR DEFAUT 
-	public Joueur(String nom, int numero, String couleur, int nb_camembert)
+	public Joueur(String nom, int numero, String couleur)
 	{
 		this.nom=nom;
 		this.numero=numero;
 		this.couleur=couleur;
-		this.nb_camembert=nb_camembert;
+		this.nb_camembert=0;
 		
 	}
 	
@@ -36,9 +36,10 @@ public class Joueur {
 	
 	
 	//METHODES METIERS
-	public void lancerDe()
+	public int lancerDe()
 	{
-		
+		De de = new De();
+		return de.lancer();
 		
 	}
 
