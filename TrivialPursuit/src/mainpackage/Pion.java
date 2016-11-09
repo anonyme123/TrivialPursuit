@@ -22,12 +22,12 @@ public class Pion {
 			return true;
 	}
 
-/*	public boolean isMoveOk(int xFinal, int yfinal){
-		if(coord.x ==)
+/	public boolean isMoveOk(int xFinal, int yfinal){
+		if(coord.x == coord.x + getNbAleatoire())
 		return false;
 		
 		
-	}*/
+	}
 	public String getCouleur() {
 		return couleur;
 	}

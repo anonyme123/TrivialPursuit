@@ -32,6 +32,9 @@ public class Main {
 		p1.seDeplacer(6, 3);
 		System.out.println(p1.toString());
 
+		De d1 = new De();
+		d1.lancer();
+		System.out.println(d1.toString());
 	}
 
 }
