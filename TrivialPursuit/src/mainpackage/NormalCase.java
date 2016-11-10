@@ -2,39 +2,46 @@ package mainpackage;
 
 public class NormalCase extends AbstractCase {
 
-	//------------------------------------
-	//Constructeur par defaut, preciser la couleur
+	//Constructeur par défaut, la couleur est liee a un theme et doit etre precisee
 	public NormalCase(Couleur couleur)
-	{ //par defaut isCamembert = false
+	{ 
 		super();
 		this.couleur.getTheme();
-		
 	}
 	
-	//recuperer la position
+//------------------------------------
+	//ACCESSEURS ET MUTATEURS
+	
 	public int getPos(int x,int y)
 	{
 		return this.posX + this.posY;
 	}
-
-	//set la position de la case
+	
 	public void setPos(int x, int y)
 	{
 		this.posX=x;
 		this.posY=y;
 	}
 	
-	//definir si case a un camembert ou non
-	public void setCamembert(boolean cam) //par defaut init a false
+//------------------------------------
+	//Methode qui definit si une case a un camembert ou non, par defaut elle n'en a pas
+	public void setCamembert() 
 	{
-		this.isCamembert = cam;
+		this.isCamembert = true;
 	}
 	
-	//init a false, change si un joueur la selectionne (dans JOueur => CHoisirCaseDestination
-	
-	//Gerer le cas quand le joueur n'est plus dessus donc déselectionner la case
+//------------------------------------	
+	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
+	//Par defaut toutes les cases sont déselectionnées
 	public void isSelected()
 	{
 		this.selected = true;
 	}
+	
+	//methode a utiliser lorsque le joueur quitte la case pour revenir à l'état initial
+	public void isNotSelected()
+	{
+		this.selected = false;
+	}
+//------------------------------------
 }
