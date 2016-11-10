@@ -107,188 +107,22 @@ public class IHM extends JFrame {
 		rules.add(btnJouer);
 		
 		/////// remplissage du jpanel gameboard /////////
-		Canvas canvas_0 = new Canvas();
-		canvas_0.setBounds(72, 87, 70, 70);
-		gameboard.add(canvas_0);
-		canvas_0.setBackground(Color.ORANGE);
+		gameboard.setLayout( new GridLayout(7, 7) );
 		
-		Canvas canvas_1 = new Canvas();
-		canvas_1.setBackground(Color.GRAY);
-		canvas_1.setBounds(266, 87, 70, 70);
-		gameboard.add(canvas_1);
-		
-		Canvas canvas_2 = new Canvas();
-		canvas_2.setBackground(Color.GREEN);
-		canvas_2.setBounds(72, 155, 70, 70);
-		gameboard.add(canvas_2);
-		
-		Canvas canvas_3 = new Canvas();
-		canvas_3.setBackground(Color.BLUE);
-		canvas_3.setBounds(329, 87, 70, 70);
-		gameboard.add(canvas_3);    
-        
-        Canvas canvas_4 = new Canvas();
-        canvas_4.setBackground(Color.MAGENTA);
-        canvas_4.setBounds(135, 87, 70, 70);
-        gameboard.add(canvas_4);
-        
-        Canvas canvas_5 = new Canvas();
-        canvas_5.setBackground(Color.YELLOW);
-        canvas_5.setBounds(202, 87, 70, 70);
-        gameboard.add(canvas_5);
-        
-        Canvas canvas_6 = new Canvas();
-        canvas_6.setBackground(Color.GREEN);
-        canvas_6.setBounds(397, 87, 70, 70);
-        gameboard.add(canvas_6);
-        
-        Canvas canvas_7 = new Canvas();
-        canvas_7.setBackground(Color.ORANGE);
-        canvas_7.setBounds(466, 87, 70, 70);
-        gameboard.add(canvas_7);
-        
-        Canvas canvas_8 = new Canvas();
-        canvas_8.setBackground(Color.MAGENTA);
-        canvas_8.setBounds(529, 87, 70, 70);
-        gameboard.add(canvas_8);
-        
-        Canvas canvas_10 = new Canvas();
-        canvas_10.setBackground(Color.GRAY);
-        canvas_10.setBounds(660, 87, 70, 70);
-        gameboard.add(canvas_10);
-        
-        Canvas canvas_9 = new Canvas();
-        canvas_9.setBackground(Color.YELLOW);
-        canvas_9.setBounds(596, 87, 70, 70);
-        gameboard.add(canvas_9);
-        
-        Canvas canvas_11 = new Canvas();
-        canvas_11.setBackground(Color.BLUE);
-        canvas_11.setBounds(660, 155, 70, 70);
-        gameboard.add(canvas_11);
-        
-        Canvas canvas_12 = new Canvas();
-        canvas_12.setBackground(Color.GREEN);
-        canvas_12.setBounds(660, 219, 70, 70);
-        gameboard.add(canvas_12);
-        
-        Canvas canvas_13 = new Canvas();
-        canvas_13.setBackground(Color.ORANGE);
-        canvas_13.setBounds(660, 284, 70, 70);
-        gameboard.add(canvas_13);
-        
-        Canvas canvas_14 = new Canvas();
-        canvas_14.setBackground(Color.MAGENTA);
-        canvas_14.setBounds(660, 349, 70, 70);
-        gameboard.add(canvas_14);
-        
-        Canvas canvas_15 = new Canvas();
-        canvas_15.setBackground(Color.YELLOW);
-        canvas_15.setBounds(660, 413, 70, 70);
-        gameboard.add(canvas_15);
-        
-        Canvas canvas_16 = new Canvas();
-        canvas_16.setBackground(Color.GRAY);
-        canvas_16.setBounds(660, 478, 70, 70);
-        gameboard.add(canvas_16);
-        
-        Canvas canvas_17 = new Canvas();
-        canvas_17.setBackground(Color.BLUE);
-        canvas_17.setBounds(660, 543, 70, 70);
-        gameboard.add(canvas_17);
-        
-        Canvas canvas_19 = new Canvas();
-        canvas_19.setBackground(Color.ORANGE);
-        canvas_19.setBounds(660, 670, 70, 70);
-        gameboard.add(canvas_19);
-        
-        Canvas canvas_18 = new Canvas();
-        canvas_18.setBackground(Color.GREEN);
-        canvas_18.setBounds(660, 607, 70, 70);
-        gameboard.add(canvas_18);
-        
-        Canvas canvas_20 = new Canvas();
-        canvas_20.setBackground(Color.MAGENTA);
-        canvas_20.setBounds(596, 670, 70, 70);
-        gameboard.add(canvas_20);
-        
-        Canvas canvas_21 = new Canvas();
-        canvas_21.setBackground(Color.YELLOW);
-        canvas_21.setBounds(529, 670, 70, 70);
-        gameboard.add(canvas_21);
-        
-        Canvas canvas_22 = new Canvas();
-        canvas_22.setBackground(Color.GRAY);
-        canvas_22.setBounds(466, 670, 70, 70);
-        gameboard.add(canvas_22);
-        
-        Canvas canvas_23 = new Canvas();
-        canvas_23.setBackground(Color.BLUE);
-        canvas_23.setBounds(397, 670, 70, 70);
-        gameboard.add(canvas_23);
-        
-        Canvas canvas_24 = new Canvas();
-        canvas_24.setBackground(Color.GREEN);
-        canvas_24.setBounds(329, 670, 70, 70);
-        gameboard.add(canvas_24);
-        
-        Canvas canvas_25 = new Canvas();
-        canvas_25.setBackground(Color.ORANGE);
-        canvas_25.setBounds(266, 670, 70, 70);
-        gameboard.add(canvas_25);
-        
-        Canvas canvas_26 = new Canvas();
-        canvas_26.setBackground(Color.MAGENTA);
-        canvas_26.setBounds(202, 670, 70, 70);
-        gameboard.add(canvas_26);
-        
-        Canvas canvas_28 = new Canvas();
-        canvas_28.setBackground(Color.GRAY);
-        canvas_28.setBounds(72, 670, 70, 70);
-        gameboard.add(canvas_28);
-        
-        Canvas canvas_27 = new Canvas();
-        canvas_27.setBackground(Color.YELLOW);
-        canvas_27.setBounds(135, 670, 70, 70);
-        gameboard.add(canvas_27);
-        
-        Canvas canvas_29 = new Canvas();
-        canvas_29.setBackground(Color.BLUE);
-        canvas_29.setBounds(72, 607, 70, 70);
-        gameboard.add(canvas_29);
-        
-        Canvas canvas_30 = new Canvas();
-        canvas_30.setBackground(Color.GREEN);
-        canvas_30.setBounds(72, 543, 70, 70);
-        gameboard.add(canvas_30);
-        
-        Canvas canvas_31 = new Canvas();
-        canvas_31.setBackground(Color.ORANGE);
-        canvas_31.setBounds(72, 478, 70, 70);
-        gameboard.add(canvas_31);
-        
-        Canvas canvas_32 = new Canvas();
-        canvas_32.setBackground(Color.MAGENTA);
-        canvas_32.setBounds(72, 413, 70, 70);
-        gameboard.add(canvas_32);
-        
-        Canvas canvas_33 = new Canvas();
-        canvas_33.setBackground(Color.YELLOW);
-        canvas_33.setBounds(72, 349, 70, 70);
-        gameboard.add(canvas_33);
-        
-        Canvas canvas_34 = new Canvas();
-        canvas_34.setBackground(Color.GRAY);
-        canvas_34.setBounds(72, 284, 70, 70);
-        gameboard.add(canvas_34);
-        
-        Canvas canvas_35 = new Canvas();
-        canvas_35.setBackground(Color.BLUE);
-        canvas_35.setBounds(72, 219, 70, 70);
-        gameboard.add(canvas_35);
-        getContentPane().add(cardPanel, BorderLayout.CENTER);
+		for (int i = 1; i <= 49; i++) {
+			JPanel square = new JPanel( new BorderLayout() );
+			gameboard.add( square );
+			
+			if (i==1 || i==15 || i==26 || i==39 || i==42) square.setBackground(Color.orange);
+			if (i==2 || i==21 || i==11 || i==24 || i==44 || i==49) square.setBackground(Color.blue);
+			if (i==3 || i==8 || i==14 || i==18 || i==23 || i==43 || i==48) square.setBackground(Color.green);
+			if (i==4 || i==7 || i==25 || i==36 || i==47) square.setBackground(Color.red);
+			if (i==5 || i==28 || i==29 || i==46) square.setBackground(Color.pink);
+			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(Color.yellow);
+		}	
         ///////fin du remplissage du jpanel gameboard /////////
         
+        getContentPane().add(cardPanel, BorderLayout.CENTER);
         cardPanel.add(startscreen, "1");
         cardPanel.add(rules, "2");
         cardPanel.add(gameboard, "3");
