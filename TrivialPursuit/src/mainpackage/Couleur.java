@@ -1,11 +1,21 @@
 package mainpackage;
 
 public enum Couleur {
+	
+	VERTE(Categorie.INFORMATIQUE),
+	ROUGE(Categorie.LYONBYNIGHT),
+	BLEU(Categorie.DIVERTISSEMENT),
+	ROSE(Categorie.SPORT),
+	ORANGE(Categorie.VOYAGE),
+	JAUNE(Categorie.MUSIQUE);
+	
+	Categorie theme;
+	
+	public Categorie getTheme() {
+		return theme;
+	}
 
-	VERTE,
-	ROUGE,
-	BLEU,
-	ROSE,
-	ORANGE,
-	JAUNE;
+	Couleur(Categorie theme) {
+		this.theme = theme;
+	}
 }
