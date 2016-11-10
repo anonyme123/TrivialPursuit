@@ -12,13 +12,11 @@ public class IHM extends JFrame {
 
     private static final long serialVersionUID = 1L;
     private JPanel cardPanel, startscreen, rules, gameboard;
-    /*private JLabel jl1, jl2;
-    private JButton btn1, btn2;*/
     private CardLayout cardLayout = new CardLayout();
 
     public IHM() {
         setTitle("TrivialPursuit");
-        setSize(800, 500);
+        setSize(800, 800);
         try {
 			setIconImage(ImageIO.read(new File("src/appicon.png")));
 		} catch (IOException e) {
@@ -32,8 +30,10 @@ public class IHM extends JFrame {
         rules = new JPanel();
         gameboard = new JPanel();
         startscreen.setLayout(null);
+        rules.setLayout(null);
+        gameboard.setLayout(null);
 
-        /////// début du remplissage du jpanel startscreen /////////////////
+        /////// remplissage du jpanel startscreen /////////////////
         JLabel lblTitle = new JLabel("Trivial Pursuit");
         lblTitle.setBounds(282, 12, 239, 42);
 		lblTitle.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
@@ -82,10 +82,8 @@ public class IHM extends JFrame {
             }
 		});
 		startscreen.add(btnValider);
-		rules.setLayout(null);
-        ///////fin du remplissage du jpanel startscreen /////////
-		
-	    ///////début du remplissage du jpanel rules /////////
+
+	    /////// remplissage du jpanel rules /////////
 		JLabel lblRglesDuJeu = new JLabel("R\u00E8gles du jeu");
 		lblRglesDuJeu.setBounds(275, 12, 238, 42);
 		lblRglesDuJeu.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
@@ -107,54 +105,26 @@ public class IHM extends JFrame {
             }
 		});
 		rules.add(btnJouer);
-		gameboard.setLayout(null);
-	    ///////fin du remplissage du jpanel rules /////////
 		
-	    ///////début du remplissage du jpanel gameboard /////////
-		Canvas canvas = new Canvas();
-		canvas.setBackground(Color.BLACK);
-		canvas.setBounds(316, 62, 69, 43);
-		gameboard.add(canvas);
+		/////// remplissage du jpanel gameboard ////////
+		gameboard.setLayout( new GridLayout(7, 7) );
 		
-		Canvas canvas_1 = new Canvas();
-		canvas_1.setBackground(Color.RED);
-		canvas_1.setBounds(562, 71, 100, 100);
-		gameboard.add(canvas_1);
-		
-		Canvas canvas_2 = new Canvas();
-		canvas_2.setBackground(Color.GREEN);
-		canvas_2.setBounds(131, 242, 201, 150);
-		gameboard.add(canvas_2);
-		
-		Canvas canvas_3 = new Canvas();
-		canvas_3.setBackground(Color.BLUE);
-		canvas_3.setBounds(626, 292, 100, 100);
-		gameboard.add(canvas_3);
-	    ///////fin du remplissage du jpanel gameboard /////////
-   
+		for (int i = 1; i <= 49; i++) {
+			JPanel square = new JPanel( new BorderLayout() );
+			gameboard.add( square );
+			
+			if (i==1 || i==15 || i==26 || i==39 || i==42) square.setBackground(Color.orange);
+			if (i==2 || i==21 || i==11 || i==24 || i==44 || i==49) square.setBackground(Color.blue);
+			if (i==3 || i==8 || i==14 || i==18 || i==23 || i==43 || i==48) square.setBackground(Color.green);
+			if (i==4 || i==7 || i==25 || i==36 || i==47) square.setBackground(Color.red);
+			if (i==5 || i==28 || i==29 || i==46) square.setBackground(Color.pink);
+			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(Color.yellow);
+		}	
+        ///////fin du remplissage du jpanel gameboard /////////
+        
+        getContentPane().add(cardPanel, BorderLayout.CENTER);
         cardPanel.add(startscreen, "1");
         cardPanel.add(rules, "2");
         cardPanel.add(gameboard, "3");
-        getContentPane().add(cardPanel, BorderLayout.CENTER);
     }
-
-    /*public static void main(String[] args) {
-    	
-	    try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException | InstantiationException
-				| IllegalAccessException | UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
-
-        EventQueue.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                TrivialPursuit frame = new TrivialPursuit();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setVisible(true);
-            }
-        });
-    }*/
 }

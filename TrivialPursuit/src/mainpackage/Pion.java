@@ -5,6 +5,7 @@ public class Pion {
 	public int idPion;
 	public Coord coord;
 	
+	//Initialisation d'un pion
 	public Pion(String couleur, int idPion, Coord coord){
 		
 		this.couleur = couleur;
@@ -13,7 +14,7 @@ public class Pion {
 		
 	}
 	
-	public boolean seDeplacer(int x, int y){
+	public boolean seDeplacer(int x, int y){ // Fait se déplacer le pion
 		if(coord.x == x && coord.y == y)
 			return false;
 		else
@@ -22,12 +23,18 @@ public class Pion {
 			return true;
 	}
 
-	public boolean isMoveOk(int xFinal, int yfinal){
-		if(coord.x == coord.x  )
-		return false;
+	// Vérifie si le mouvemement eput être effectué par le joueur
+	public boolean isMoveOk(int xFinal, int yFinal, De de){
+		if(xFinal == coord.x + de.getNbAleatoire() && yFinal == coord.y || yFinal == coord.y + de.getNbAleatoire() && xFinal == coord.x)
+			return true;
+		else 
+			return false;
+
 		
 		
 	}
+	
+	//Getters et Setters
 	public String getCouleur() {
 		return couleur;
 	}
