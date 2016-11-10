@@ -31,6 +31,8 @@ public class NormalCase extends AbstractCase {
 	}
 	
 	//init a false, change si un joueur la selectionne (dans JOueur => CHoisirCaseDestination
+	
+	//Gerer le cas quand le joueur n'est plus dessus donc déselectionner la case
 	public void isSelected()
 	{
 		this.selected = true;
