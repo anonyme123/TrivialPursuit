@@ -1,6 +1,6 @@
 package mainpackage;
 
-public enum Categorie {
+public enum Categorie {//lolol
 
 	INFORMATIQUE,
 	LYONBYNIGHT,

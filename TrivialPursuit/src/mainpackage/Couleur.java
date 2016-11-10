@@ -16,6 +16,6 @@ public enum Couleur {
 	}
 
 	Couleur(Categorie theme) {
-		this.theme = theme;
+		this.theme = theme;//lalala
 	}
 }
