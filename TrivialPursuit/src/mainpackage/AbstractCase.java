@@ -7,8 +7,7 @@ public abstract class AbstractCase {
 	public int hauteur = 10;
 	public Couleur couleur;
 	
-	
-	public boolean isCamembert;
+	public boolean isCamembert=false;
 	public int posX;
 	public int posY;
 	
