@@ -1,19 +1,19 @@
 ----------------------------------------------------------------
-Wed Nov 09 14:54:05 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0158-495d-faff-00000e555100 
-on database directory /fs03/share/users/hugo.talbot/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
-Loaded from file:/fs03/share/users/hugo.talbot/home/git/TrivialPursuit/TrivialPursuit/derby.jar
+Thu Nov 10 11:07:07 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0158-4db4-8901-00000ddb1868 
+on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
+Loaded from file:/fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.7.0_111-b01
-user.dir=/fs03/share/users/hugo.talbot/home/git/TrivialPursuit/TrivialPursuit
+user.dir=/fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit
 os.name=Linux
 os.arch=amd64
 os.version=4.4.0-45-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Wed Nov 09 14:54:06 CET 2016: Shutting down Derby engine
+Thu Nov 10 11:07:07 CET 2016: Shutting down Derby engine
 ----------------------------------------------------------------
-Wed Nov 09 14:54:06 CET 2016:
-Shutting down instance a816c00e-0158-495d-faff-00000e555100 on database directory /fs03/share/users/hugo.talbot/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
+Thu Nov 10 11:07:07 CET 2016:
+Shutting down instance a816c00e-0158-4db4-8901-00000ddb1868 on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
 ----------------------------------------------------------------

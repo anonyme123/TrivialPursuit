@@ -14,7 +14,7 @@ public class Pion {
 		
 	}
 	
-	public boolean seDeplacer(int x, int y){ // Fait se déplacer le pion
+	public boolean seDeplacer(int x, int y){ // Fait se dï¿½placer le pion
 		if(coord.x == x && coord.y == y)
 			return false;
 		else
@@ -23,8 +23,20 @@ public class Pion {
 			return true;
 	}
 
-	// Vérifie si le mouvemement eput être effectué par le joueur
+	// Vï¿½rifie si le mouvemement eput ï¿½tre effectuï¿½ par le joueur
 	public boolean isMoveOk(int xFinal, int yFinal, De de){
+		int reste=0, xFinalOk=0, yFinalOk=0;
+		if(coord.x+de>6){
+			xFinalOk=de-coord.x;
+			reste=de-xFinalOk;
+			if(y==0){
+				yFinalOk=coord.y+reste;
+			}elseif(coord.y==6){
+				yFinalOk=coord.y-reste;
+			}
+		}
+		
+		
 		if(xFinal == coord.x + de.getNbAleatoire() && yFinal == coord.y || yFinal == coord.y + de.getNbAleatoire() && xFinal == coord.x)
 			return true;
 		else 
