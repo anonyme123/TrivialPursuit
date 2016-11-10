@@ -51,7 +51,5 @@ public class Joueur {
 	public void repondreQuestion()
 	{
 		
-		
 	}
-
 }
