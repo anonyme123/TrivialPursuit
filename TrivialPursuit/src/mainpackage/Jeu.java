@@ -13,7 +13,7 @@ public class Jeu {
 	{
 		this.largeur=largeur;
 		this.hauteur=hauteur;
-		this.nbreCases=nbreCases;
+		this.nbreCases=nbreCases; //est-ce que c'est pas toujours le même ?
 		this.nbreJoueurs=nbreJoueurs;
 	}	
 	
