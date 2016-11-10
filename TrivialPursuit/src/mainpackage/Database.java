@@ -11,11 +11,11 @@ import org.apache.derby.jdbc.EmbeddedDriver;
 
 public class Database {
 
-   public static void main(String[] args) {
+   /*public static void main(String[] args) {
       Database e =
          new Database();
       e.Derby();
-   }
+   }*/
    public void Derby() {
       Connection conn = null;
       PreparedStatement pstmt;

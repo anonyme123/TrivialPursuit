@@ -8,6 +8,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		//LANCEMENT DE L'IHM
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
@@ -25,6 +27,11 @@ public class Main {
             }
         });
         
+        //INITIALISATION DE LA DATABASE
+        Database e = new Database();
+        e.Derby();
+        
+        //TESTS
         Pion p1 = new Pion("Bleu", 1, new Coord(5, 4));
 		System.out.println(p1.toString());
 		p1.seDeplacer(6, 3);
