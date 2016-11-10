@@ -106,7 +106,7 @@ public class IHM extends JFrame {
 		});
 		rules.add(btnJouer);
 		
-		/////// remplissage du jpanel gameboard /////////
+		/////// remplissage du jpanel gameboard ////////
 		gameboard.setLayout( new GridLayout(7, 7) );
 		
 		for (int i = 1; i <= 49; i++) {
