@@ -35,7 +35,7 @@ public class Database {
          conn.setAutoCommit(false);
          stmt = conn.createStatement();
          
-         try { //on ne créé la database que si elle n'existe pas déjà
+         try { ///on ne créé la database que si elle n'existe pas déjà
         	 stmt.execute(createSQL);
 
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
