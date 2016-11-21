@@ -73,7 +73,7 @@ public class Main {
         
         System.out.println(d1.toString());
         Pion p5 = new Pion("Bleu", 1, new Coord(4, 6));
-		System.out.println(p5.toString());
+		System.out.println(p5.toString());z
       
       
         Pion p6 = new Pion("Bleu", 1, new Coord(3, 6));

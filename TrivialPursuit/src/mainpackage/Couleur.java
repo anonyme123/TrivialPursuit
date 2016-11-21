@@ -15,6 +15,8 @@ public enum Couleur {
 		return theme;
 	}
 
+		
+	
 	Couleur(Categorie theme) {
 		this.theme = theme;//lalala
 	}

@@ -1,5 +1,7 @@
 package mainpackage;
 
+import java.util.List;
+
 public class Jeu {
 	
 	private static final String NULL = null;
@@ -7,60 +9,59 @@ public class Jeu {
 	private static int hauteur;
 	private static int nbreCases;
 	private int nbreJoueurs;
-	private int joueurActif;
+	private List<Joueur> listeJoueurs;
+	private Joueur joueurActif;
+	private int idJoueurActif;
 	
 	//Constructeur par default 
-	public Jeu(int largeur, int hauteur, int nbreCase, int nbreJoueurs)
+	public Jeu(int largeur, int hauteur, int nbreCase, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif)
 	{
-		this.largeur=largeur;
+		this.largeur=largeur;/* a voir si utile */
 		this.hauteur=hauteur;
 		this.nbreCases=nbreCases; //est-ce que c'est pas toujours le même ?
 		this.nbreJoueurs=nbreJoueurs;
+		this.joueurActif = joueurActif;
+		this.listeJoueurs = listeJoueurs;
+		this.idJoueurActif = joueurActif.getNumero();
 	}	
 	
-	public 	Jeu (int joueur){
-		
-		joueurActif=joueur;
-		
+	public 	Joueur afficheJoueurActif (){
+		return joueurActif;
 	}
 	
-	public void changeJoueurActif(){
+	public void changeJoueurActif() {
 		
-		switch (joueurActif){
-		
-		case 1 : 
-			joueurActif=2;
-			break;
-		case 2 : 
-			joueurActif=3;
-			break;
-		case 3 :
-			joueurActif=4;
-			break;
-		case 4 : 
-			joueurActif=5;
-			break;
-		case 5 : 
-			joueurActif=6;
-			break;
-		case 6 :
-			joueurActif=1;
-			break;
-			
-		
+		if (idJoueurActif==6){
+			idJoueurActif=1;
 		}
+		else{
+			idJoueurActif++;
+		}
+		
+		for (Joueur j : listeJoueurs) {
+			if (j.getNumero() == idJoueurActif) {
+				joueurActif = j;
+			}
+		}
+	}
+	
 		/*if(joueurActif == 1)
 			joueurActif = 2;
 		else if (joueurActif==2)
 			joueurActif =3;
 		else if (joueurActif)*/
-		
-	}
+
 	
-	public String afficheVainqueur(Joueur joueur)
+	public String repondQuestionEtafficheVainqueur()
 	{
-		String nomjoueur =NULL;
-		return nomjoueur;
+		joueurActif.nb_camembert = joueurActif.nb_camembert + 1;
+		String s = "";
+		for (Joueur j : listeJoueurs) {
+			if (j.getNb_camembert() == 6) {
+				 s ="Nous avons un Vainqueur " + joueurActif;
+			}
+		}
+		return s;
 	}
 	
 	public static int getLargeur() {
@@ -100,12 +101,21 @@ public class Jeu {
 		int i = 0;
 		return i;
 	}
-	
 
+	public List<Joueur> getListeJoueurs() {
+		return listeJoueurs;
+	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void setListeJoueurs(List<Joueur> listeJoueurs) {
+		this.listeJoueurs = listeJoueurs;
+	}
 
+	public Joueur getJoueurActif() {
+		return joueurActif;
+	}
+
+	public void setJoueurActif(Joueur joueurActif) {
+		this.joueurActif = joueurActif;
 	}
 
 }
