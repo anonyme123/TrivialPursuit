@@ -22,10 +22,8 @@ public class De {
 		return nbAleatoire;
 	}
 
-	
 	@Override // Affichage du nombre aléatoire
 	public String toString() {
 		return "Vous avez fait :" + nbAleatoire;
-	}
-	
+	}	
 }
