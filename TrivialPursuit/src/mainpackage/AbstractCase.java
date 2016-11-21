@@ -10,8 +10,5 @@ public abstract class AbstractCase {
 	public Couleur couleur;
 	public int posX;
 	public int posY;
-	
-	
-	
 
 }

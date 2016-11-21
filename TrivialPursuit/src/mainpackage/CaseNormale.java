@@ -1,12 +1,13 @@
 package mainpackage;
 
-public class NormalCase extends AbstractCase {
+public class CaseNormale extends AbstractCase {
 
 	//Constructeur par défaut, la couleur est liee a un theme et doit etre precisee
-	public NormalCase(Couleur couleur)
+	public CaseNormale(Couleur couleur)
 	{ 
 		super();
 		this.couleur.getTheme();
+		this.isCamembert=false; //par defaut les CASES NORMALES n'ont aucun camembert
 	}
 	
 //------------------------------------
@@ -23,13 +24,7 @@ public class NormalCase extends AbstractCase {
 		this.posY=y;
 	}
 	
-//------------------------------------
-	//Methode qui definit si une case a un camembert ou non, par defaut elle n'en a pas
-	public void setCamembert() 
-	{
-		this.isCamembert = true;
-	}
-	
+
 //------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
 	//Par defaut toutes les cases sont déselectionnées
