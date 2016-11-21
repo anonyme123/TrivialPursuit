@@ -43,7 +43,7 @@ public class Joueur {
 		
 	}
 
-	public void bougerPion() 
+	public void choisirCaseDestination() 
 	{
 		
 	}
