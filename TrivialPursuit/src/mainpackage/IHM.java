@@ -121,7 +121,7 @@ public class IHM extends JFrame {
 			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(Color.yellow);
 			if (i==1){
 				ImageIcon imageIcon = new ImageIcon("src/caseicon.png");
-			    JLabel label = new JLabel(imageIcon);
+			    JLabel label = new JLabel(imageIcon); //
 			    square.add(label);
 			}
 		}	
