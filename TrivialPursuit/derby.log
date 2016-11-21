@@ -1,19 +1,19 @@
 ----------------------------------------------------------------
-Thu Nov 10 11:07:07 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0158-4db4-8901-00000ddb1868 
-on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
+Mon Nov 21 17:10:21 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0158-87a7-0ac3-00000de315f8 
+on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@6a3449a8 
 Loaded from file:/fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_111-b01
+java.runtime.version=1.7.0_75-b13
 user.dir=/fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit
 os.name=Linux
 os.arch=amd64
-os.version=4.4.0-45-generic
+os.version=3.13.0-100-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Nov 10 11:07:07 CET 2016: Shutting down Derby engine
+Mon Nov 21 17:10:21 CET 2016: Shutting down Derby engine
 ----------------------------------------------------------------
-Thu Nov 10 11:07:07 CET 2016:
-Shutting down instance a816c00e-0158-4db4-8901-00000ddb1868 on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@21dc7b3e 
+Mon Nov 21 17:10:21 CET 2016:
+Shutting down instance a816c00e-0158-87a7-0ac3-00000de315f8 on database directory /fs03/share/users/claire.delorme/home/git/TrivialPursuit/TrivialPursuit/database with class loader sun.misc.Launcher$AppClassLoader@6a3449a8 
 ----------------------------------------------------------------
