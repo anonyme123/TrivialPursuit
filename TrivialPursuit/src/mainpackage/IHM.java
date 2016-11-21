@@ -117,6 +117,11 @@ public class IHM extends JFrame {
 			if (i==4 || i==7 || i==25 || i==36 || i==47) square.setBackground(Color.red);
 			if (i==5 || i==28 || i==29 || i==46) square.setBackground(Color.pink);
 			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(Color.yellow);
+			if (i==1){
+				ImageIcon imageIcon = new ImageIcon("src/caseicon.png");
+			    JLabel label = new JLabel(imageIcon); //
+			    square.add(label);
+			}
 		}	
         ///////fin du remplissage du jpanel gameboard /////////
         
