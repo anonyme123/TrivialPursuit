@@ -42,7 +42,7 @@ public class Pion {
 		if (xFinalOk==xFinal && yFinalOk==yFinal){
 			return true;
 		}
-		
+		//o
 		//cas deplacement x vers la gauche
 		if(coord.x -de.getNbAleatoire()<0 && (coord.y==0 || coord.y==6)){	
 			xFinalOk=0;
