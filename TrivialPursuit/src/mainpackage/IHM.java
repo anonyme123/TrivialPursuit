@@ -118,13 +118,38 @@ public class IHM extends JFrame {
 			if (i==4 || i==7 || i==36 || i==47) square.setBackground(new Color(233,61,96)); //rouge
 			if (i==5 || i==28 || i==29 || i==46 || i==8) square.setBackground(new Color(177,72,185)); //violet
 			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(new Color(249,254,107)); //jaune
-			if (i==1 || i==7 || i==22 || i==28 || i==43 || i==49){
-				ImageIcon imageIcon = new ImageIcon("src/caseicon.png");
+			
+			if (i==25) square.setBackground(Color.black); //case du milieu
+			if (i==1){
+				ImageIcon imageIcon = new ImageIcon("src/musique.jpg");
 			    JLabel label = new JLabel(imageIcon);
-			    square.setBackground(Color.white);
 			    square.add(label);
 			}
-			if (i==25) square.setBackground(Color.black);
+			if (i==7){
+				ImageIcon imageIcon = new ImageIcon("src/geek.jpg");
+			    JLabel label = new JLabel(imageIcon);
+			    square.add(label);
+			}
+			if (i==22){
+				ImageIcon imageIcon = new ImageIcon("src/histoire.jpg");
+			    JLabel label = new JLabel(imageIcon);
+			    square.add(label);
+			}
+			if (i==28){
+				ImageIcon imageIcon = new ImageIcon("src/sport.jpg");
+			    JLabel label = new JLabel(imageIcon);
+			    square.add(label);
+			}
+			if (i==43){
+				ImageIcon imageIcon = new ImageIcon("src/lyon.jpg");
+			    JLabel label = new JLabel(imageIcon);
+			    square.add(label);
+			}
+			if (i==49){
+				ImageIcon imageIcon = new ImageIcon("src/voyage.jpg");
+			    JLabel label = new JLabel(imageIcon);
+			    square.add(label);
+			}
 		}	
         ///////fin du remplissage du jpanel gameboard /////////
         
