@@ -1,24 +1,8 @@
-package mainpackage;
+package Object;
 
 public abstract class AbstractCase {
 	
 	
-	public AbstractCase(Couleur couleur, int posX, int posY, boolean isCamembert) {
-		super();
-		this.isCamembert = isCamembert;
-		this.couleur = couleur;
-		this.posX = posX;
-		this.posY = posY;
-	}
-
-	@Override
-	public String toString() {
-		return "AbstractCase [largeur=" + largeur + ", hauteur=" + hauteur
-				+ ", isCamembert=" + isCamembert + ", isSelected=" + isSelected
-				+ ", couleur=" + couleur + ", posX=" + posX + ", posY=" + posY
-				+ "]";
-	}
-
 	public int largeur = 100;//Dimensions fixes en 
 	public int hauteur = 100;// pixels pour chaque case
 	public boolean isCamembert=false; //Par defaut une case n'a pas de camembert
@@ -42,9 +26,6 @@ public abstract class AbstractCase {
 		this.posY=y;
 	}
 		
-	public Couleur getCouleur(){
-		return this.couleur;
-	}
 
 	//------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
@@ -59,13 +40,6 @@ public abstract class AbstractCase {
 	{
 		this.isSelected = false;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 	}
 	

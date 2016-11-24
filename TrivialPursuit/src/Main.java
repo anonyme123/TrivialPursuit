@@ -1,4 +1,4 @@
-package mainpackage;
+
 import java.awt.EventQueue;
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,13 @@ import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import mainpackage.Couleur;
+import Database.Database;
+import IHM.IHM;
+import Object.Coord;
+import Object.De;
+import Object.Pion;
 
 public class Main {
 	
@@ -29,10 +36,10 @@ public class Main {
             }
         });
         
-       /* //INITIALISATION DE LA DATABASE
+        //INITIALISATION DE LA DATABASE
         Database e = new Database();
         e.Derby();
-        */
+        
         //TESTS
         Pion p1 = new Pion("Bleu", 1, new Coord(5, 4));
 		System.out.println(p1.toString());
@@ -86,8 +93,7 @@ public class Main {
     	System.out.println(p7.toString());
         System.out.println(p7.isMoveOk(6, 2, d1));*/
         
-      
-        //CREATION DES CASES
+      //CREATION DES CASES
         int[][] in = {
         		{0,1,1},{0,2,3},
         		{1,0,2},{1,3,2},{1,6,2},
@@ -106,7 +112,6 @@ public class Main {
         }
         
         System.out.println(map);
-        
 	}
 
 }

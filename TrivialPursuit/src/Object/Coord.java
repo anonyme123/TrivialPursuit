@@ -1,4 +1,4 @@
-package mainpackage;
+package Object;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ public class Coord implements Serializable {
 	
 	public int x, y;
 	
-	//Constructeur des coordonnées
+	//Constructeur des coordonnï¿½es
 	public Coord(int x, int y) {
 		this.x = x; 
 		this.y = y;

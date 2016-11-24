@@ -1,4 +1,4 @@
-package mainpackage;
+package Object;
 
 public class Joueur {
 

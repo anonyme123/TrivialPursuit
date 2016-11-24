@@ -1,4 +1,4 @@
-package mainpackage;
+package IHM;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +30,7 @@ public class IHM extends JFrame {
         rules = new JPanel();
         gameboard = new JPanel();
         startscreen.setLayout(null);
+        startscreen.setBackground(Color.white);
         rules.setLayout(null);
         gameboard.setLayout(new GridLayout(7, 7));
 
