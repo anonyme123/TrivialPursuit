@@ -5,6 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import Database.Database;
+import IHM.IHM;
+import Object.Coord;
+import Object.De;
+import Object.Pion;
+
 public class Main {
 	
 	public static void main(String[] args) {
