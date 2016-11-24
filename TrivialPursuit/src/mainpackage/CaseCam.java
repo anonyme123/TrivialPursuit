@@ -3,11 +3,9 @@ package mainpackage;
 public class CaseCam extends AbstractCase{
 
 	//Constructeur par défaut, la couleur est liee a un theme et doit etre precisee
-	public CaseCam()
+	public CaseCam(Couleur couleur, int posX, int posY)
 	{
-		super();
-		this.couleur.getTheme();
-		this.isCamembert = true;
+		super(couleur,  posX,  posY, true);
 	}
 
 }

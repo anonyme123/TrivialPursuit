@@ -1,5 +1,7 @@
 package mainpackage;
 import java.awt.EventQueue;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -84,13 +86,20 @@ public class Main {
     	System.out.println(p7.toString());
         System.out.println(p7.isMoveOk(6, 2, d1));*/
         
-        int fin=5;
-        CaseNormale[] j = new CaseNormale[fin];
-         
-        for(int i=1; i<=fin; i++){
-         j[i-1] = new CaseNormale(Couleur.BLEU); 
-         
+      
+        
+        int[][] in = {
+        		{0,0,1},
+        		{0,1,2}
+        };
+        
+        Map<Coord,Couleur> map = new HashMap<>();
+        for (int x = 0 ; x <= 1 ; x++) {
+        	map.put(new Coord(in[x][0], in[x][1]), Couleur.getCouleur(in[x][2]));
+        	
         }
+        
+        System.out.println(map);
         
 	}
 
