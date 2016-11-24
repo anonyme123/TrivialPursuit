@@ -27,10 +27,10 @@ public class Main {
             }
         });*/
         
-        //INITIALISATION DE LA DATABASE
+       /* //INITIALISATION DE LA DATABASE
         Database e = new Database();
         e.Derby();
-        
+        */
         //TESTS
         Pion p1 = new Pion("Bleu", 1, new Coord(5, 4));
 		System.out.println(p1.toString());
@@ -89,6 +89,7 @@ public class Main {
          
         for(int i=1; i<=fin; i++){
          j[i-1] = new CaseNormale(Couleur.BLEU); 
+         
         }
         
 	}

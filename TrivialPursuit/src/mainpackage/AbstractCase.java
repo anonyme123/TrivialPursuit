@@ -26,6 +26,9 @@ public abstract class AbstractCase {
 		this.posY=y;
 	}
 		
+	public Couleur getCouleur(){
+		return this.couleur;
+	}
 
 	//------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
