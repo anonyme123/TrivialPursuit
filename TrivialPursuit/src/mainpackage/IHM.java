@@ -30,6 +30,7 @@ public class IHM extends JFrame {
         rules = new JPanel();
         gameboard = new JPanel();
         startscreen.setLayout(null);
+        startscreen.setBackground(Color.white);
         rules.setLayout(null);
         gameboard.setLayout(new GridLayout(7, 7));
 
