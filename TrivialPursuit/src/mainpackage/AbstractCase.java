@@ -40,6 +40,13 @@ public abstract class AbstractCase {
 	{
 		this.isSelected = false;
 	}
+	
+	
+	
+	
+	
+	
+	
 
 	}
 	

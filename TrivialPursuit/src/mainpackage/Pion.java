@@ -30,24 +30,7 @@ public class Pion {
 		int reste = 0, xFinalOk = 0, yFinalOk = 0;
 
 		// cas deplacement sur x vers la droite
-		if (coord.x + de.getNbAleatoire() > 6 && (coord.y == 0 || coord.y == 6)) { // 6
-																					// car
-																					// il
-																					// y
-																					// a
-																					// 7
-																					// cases
-																					// longueur
-																					// et
-																					// 7
-																					// en
-																					// largeur
-																					// donc
-																					// coord
-																					// de
-																					// 0
-																					// à
-																					// 6
+		if (coord.x + de.getNbAleatoire() > 6 && (coord.y == 0 || coord.y == 6)) { // 6 car il y a 7 cases longueur et 7 en largeur donc coord de 0 à 6
 			xFinalOk = 6;
 			reste = de.getNbAleatoire() - (6 - coord.x);
 			if (coord.y == 0) {

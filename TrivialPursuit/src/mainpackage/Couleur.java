@@ -5,7 +5,7 @@ public enum Couleur {
 	VERTE(Categorie.INFORMATIQUE),
 	ROUGE(Categorie.LYONBYNIGHT),
 	BLEU(Categorie.DIVERTISSEMENT),
-	ROSE(Categorie.SPORT),
+	VIOLET(Categorie.SPORT),
 	ORANGE(Categorie.VOYAGE),
 	JAUNE(Categorie.MUSIQUE);
 	

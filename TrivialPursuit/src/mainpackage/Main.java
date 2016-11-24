@@ -9,7 +9,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//LANCEMENT DE L'IHM
+	/*	//LANCEMENT DE L'IHM
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
@@ -25,7 +25,7 @@ public class Main {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
-        });
+        });*/
         
         //INITIALISATION DE LA DATABASE
         Database e = new Database();
@@ -83,6 +83,14 @@ public class Main {
         Pion p7 = new Pion("Bleu", 1, new Coord(5, 6));
     	System.out.println(p7.toString());
         System.out.println(p7.isMoveOk(6, 2, d1));*/
+        
+        int fin=5;
+        CaseNormale[] j = new CaseNormale[fin];
+         
+        for(int i=1; i<=fin; i++){
+         j[i-1] = new CaseNormale(Couleur.BLEU); 
+        }
+        
 	}
 
 }
