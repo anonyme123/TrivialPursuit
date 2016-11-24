@@ -17,6 +17,7 @@ public class IHM extends JFrame {
     public IHM() {
         setTitle("TrivialPursuit");
         setSize(600, 600);
+        setResizable(false);
         try {
 			setIconImage(ImageIO.read(new File("src/appicon.png")));
 		} catch (IOException e) {
