@@ -3,7 +3,7 @@ package Object;
 import java.util.HashMap;
 import java.util.Map;
 
-import mainpackage.Couleur;
+import Object.Couleur;
 
 public class CaseNormale extends AbstractCase {
 
