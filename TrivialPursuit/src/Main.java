@@ -7,12 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import mainpackage.Couleur;
-import Database.Database;
-import IHM.IHM;
-import Object.Coord;
-import Object.De;
-import Object.Pion;
+import Object.*;
+import Database.*;
+import IHM.*;
 
 public class Main {
 	
