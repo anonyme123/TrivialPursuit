@@ -1,2 +1,3 @@
-# TrivialPursuit
-Jeu de TrivialPursuit
+Personne ne fait de commit sur la branche master (même Hugo)
+Tout le monde fait un Team>SwitchTo>Sabranche et travaille dessus
+Pour synchroniser sur le master, tout le monde (même Hugo) fait un merge de sa branche sur la branche master
