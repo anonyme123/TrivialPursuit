@@ -1,10 +1,15 @@
-package model;
+//AUTEUR : Gael Venin
 
-//Classe abstraite AbstractCase , propose des attributs et méthodes communes ) CaseCam et CaseNormale
-//Sert à déclarer des objets Cases (avec ou sans camembert)
+//DESCRIPTION: 
+//Classe abstraite AbstractCase , propose des attributs et méthodes communes à CaseCam et CaseNormale
+//Sert à déclarer des objets de type Case (avec ou sans camembert)
+
+//INFO : 
 //PAR DEFAUT TOUTES LES CASES SONT DESELECTIONNEES
 
-//Auteur : Gael Venin
+package model;
+
+
 public abstract class AbstractCase {
 	
 	public boolean isCamembert=false; //Par defaut une case n'a pas de camembert
@@ -44,7 +49,6 @@ public abstract class AbstractCase {
 
 	//------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
-	//
 	public void isSelected()
 	{
 		this.isSelected = true;
