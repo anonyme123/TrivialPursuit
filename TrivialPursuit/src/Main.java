@@ -102,13 +102,13 @@ public class Main {
         		
         };
         
-        System.out.println(in.length);
+       /* System.out.println(in.length);
         Map<Coord,Couleur> map = new HashMap<>();
         for (int x = 0 ; x <= 23 ; x++) {
         	map.put(new Coord(in[x][0], in[x][1]), Couleur.getCouleur(in[x][2]));
-        }
+        }*/
         
-        System.out.println(map);
+     //   System.out.println(map);
 	}
 
 }
