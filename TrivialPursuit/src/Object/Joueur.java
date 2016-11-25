@@ -12,7 +12,7 @@ public class Joueur {
 	//--------------------METHODES--------------------
 	
 	//CONSTRUCTEUR PAR DEFAUT 
-	public Joueur(String nom, int numero, String couleur, Pion pion)
+	public Joueur(String nom, int numero, Pion pion)
 	{
 		this.nom=nom;
 		this.numero=numero;
@@ -71,6 +71,11 @@ public class Joueur {
 	
 	public void repondreQuestion()
 	{
+		
+	}
+	
+	public void poseQuestion(Question q){
+		
 		
 	}
 	
