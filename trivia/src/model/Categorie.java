@@ -1,7 +1,5 @@
 package model;
 
-//Auteur Gael Venin
-
 public enum Categorie {//lolol
 
 	INFORMATIQUE,
@@ -9,5 +7,6 @@ public enum Categorie {//lolol
 	DIVERTISSEMENT,
 	SPORT,
 	VOYAGE,
-	MUSIQUE;
+	MUSIQUE,
+	BONUS;
 }

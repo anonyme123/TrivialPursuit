@@ -23,18 +23,11 @@ public abstract class AbstractCase {
 		
 			@Override
 			public String toString() {
-				return "AbstractCase [+ "
-						+ ", isCamembert=" + isCamembert + ", isSelected=" + isSelected
-						+ ", couleur=" + couleur + ", posX=" + posX + ", posY=" + posY
-						+ "]";
+				return "AbstractCase [" + "isCamembert=" + isCamembert + ", isSelected=" 
+						+ isSelected+ ", couleur=" + couleur + ", posX=" + posX + ", posY=" + posY
+						+ "] \n";
 			}
-	
-	
-	
-	
-	
-	
-	
+			
 	//------------------------------------
 	//ACCESSEURS ET MUTATEURS
 	public int getPos(int x,int y)
