@@ -12,4 +12,4 @@ Pour synchroniser sur le master, tout le monde:
 * Va sur GitHub
 * Fait une pull request
 * **Hugo** doit la valider
-* Le merge se fait automatiquement à la valideation de la pull request
+* Le merge se fait automatiquement à la validation de la pull request
