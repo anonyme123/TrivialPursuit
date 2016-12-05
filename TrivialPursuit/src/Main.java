@@ -1,6 +1,8 @@
 
 import java.awt.EventQueue;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JFrame;
@@ -15,7 +17,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//LANCEMENT DE L'IHM
+	/*	//LANCEMENT DE L'IHM
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
@@ -31,7 +33,7 @@ public class Main {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
-        });
+        });*/
         
         //INITIALISATION DE LA DATABASE
         Database e = new Database();
@@ -109,6 +111,62 @@ public class Main {
         }*/
         
      //   System.out.println(map);
+        
+        Pion pJoueur1 = new Pion("Bleue",1,new Coord(0,1));
+        Joueur j1 = new Joueur("URBE",1,pJoueur1);
+        CaseNormale case1 = new CaseNormale(Couleur.BLEU);
+        List<Joueur> listeJoueurs = new ArrayList<Joueur>();
+        List<AbstractCase> listeCases = new ArrayList<AbstractCase>();
+        listeJoueurs.add(j1);
+        listeCases.add(case1);
+        Jeu jeu = new Jeu (10, 10, 10, listeCases, 1, listeJoueurs, j1);
+        Question qPosee = j1.poseQuestion();
+        System.out.println(qPosee.toString());
+        j1.repondreQuestionCam(qPosee, 2);
+        System.out.println(j1.toString());
+        
+        Question q2 = j1.poseQuestion();
+        System.out.println(q2.toString());
+        j1.repondreQuestionCam(qPosee, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q3 = j1.poseQuestion();
+        System.out.println(q3.toString());
+        j1.repondreQuestionCam(q3, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q4 = j1.poseQuestion();
+        System.out.println(q4.toString());
+        j1.repondreQuestionCam(q4, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q5 = j1.poseQuestion();
+        System.out.println(q5.toString());
+        j1.repondreQuestionCam(q5, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q6 = j1.poseQuestion();
+        System.out.println(q6.toString());
+        j1.repondreQuestionCam(q6, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q7 = j1.poseQuestion();
+        System.out.println(q7.toString());
+        j1.repondreQuestionCam(q7, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q8 = j1.poseQuestion();
+        System.out.println(q8.toString());
+        j1.repondreQuestionCam(q8, 1);
+        System.out.println(jeu.afficheVainqueur());
+        
+        Question q9 = j1.poseQuestion();
+        System.out.println(q9.toString());
+        j1.repondreQuestionCam(q9, 2);
+        System.out.println(jeu.afficheVainqueur());
+        
+        
+        
 	}
 
 }

@@ -53,6 +53,9 @@ public class Game {
 		if (jeu !=  null) {
 			jActif = jeu.getJoueurActif();
 			jActif.lancerDe();
+			//se deplacer
+			
+			jActif.poseQuestion();
 			
 			
 		}

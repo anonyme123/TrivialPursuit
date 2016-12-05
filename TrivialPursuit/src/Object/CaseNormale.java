@@ -11,7 +11,7 @@ public class CaseNormale extends AbstractCase {
 	public CaseNormale(Couleur couleur)
 	{ 
 		super();
-		this.couleur.getTheme();
+		//this.couleur.getTheme();
 	}
 	
 }	

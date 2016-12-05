@@ -54,13 +54,16 @@ public class Jeu {
 		else if (joueurActif)*/
 
 	
-	public String repondQuestionEtafficheVainqueur()
+	public String afficheVainqueur()
 	{
-		joueurActif.nb_camembert = joueurActif.nb_camembert + 1;
+		int camembertRestants = 6-joueurActif.getNb_camembert();
 		String s = "";
 		for (Joueur j : listeJoueurs) {
 			if (j.getNb_camembert() == 6) {
 				 s ="Nous avons un Vainqueur " + joueurActif;
+			}
+			else{
+				s="Vous n'avez pas encore gagné, plus que "+ camembertRestants+" camemberts :) \n";
 			}
 		}
 		return s;
