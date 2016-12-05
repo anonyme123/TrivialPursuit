@@ -39,6 +39,8 @@ public class Jeu {
 		this.listeCases = listeCases;
 	}	
 	
+	
+	
 	public Jeu(int largeur, int hauteur, int nbreCase, Map<Coord,AbstractCase> mapCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif) {
 		this.largeur=largeur;/* a voir si utile */
 		this.hauteur=hauteur;
