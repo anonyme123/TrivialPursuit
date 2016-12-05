@@ -35,17 +35,33 @@ public abstract class AbstractCase {
 			
 	//------------------------------------
 	//ACCESSEURS ET MUTATEURS
-	public int getPos(int x,int y)
+	public int getPosX()
 	{
-		return this.posX + this.posY;
+		return this.posX;
+	}
+	
+	public int getPosY()
+	{
+		return this.posY;
 	}
 			
-	public void setPos(int x, int y)
+	public void setPosX(int x)
 	{
 		this.posX=x;
+	}
+	
+	public void setPosY(int y)
+	{
 		this.posY=y;
 	}
-		
+
+	public Couleur getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(Couleur couleur) {
+		this.couleur = couleur;
+	}
 
 	//------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
@@ -60,5 +76,5 @@ public abstract class AbstractCase {
 		this.isSelected = false;
 	}
 
-	}
+}
 	
