@@ -2,7 +2,13 @@ package model;
 
 import java.util.List;
 import java.util.Map;
-//////
+/**
+ * Défini le Joueur Actif, pose une question au joueur et affiche le vainqueur si une personne a 6 camemberts
+ * @author Sébastien
+ *
+ */
+
+
 public class Jeu {
 	
 
