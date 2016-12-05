@@ -10,7 +10,7 @@ import java.sql.Statement;
 import org.apache.derby.jdbc.EmbeddedDriver;
 
 public class Question {
-	//
+	///
 	Statement stmt;
 	ResultSet rs = null;
 	AbstractCase case1;
