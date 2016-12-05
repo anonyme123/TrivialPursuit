@@ -10,6 +10,7 @@ package model;
 
 public enum Categorie {
 	
+	//renomme en ("") pour conformité avec BDD
 	INFORMATIQUE("Informatique"),
 	LYONBYNIGHT("LyonByNight"),
 	DIVERTISSEMENT("Divertissement"),

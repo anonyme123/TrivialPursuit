@@ -15,7 +15,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-	/*	//LANCEMENT DE L'IHM
+		//LANCEMENT DE L'IHM
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
@@ -67,7 +67,7 @@ public class Main {
         System.out.println("13"+p2.isMoveOk(6, 4, d1));
         System.out.println("14"+p2.isMoveOk(6, 2, d1));
         
-        /*
+       /* 
         Pion p3 = new Pion("Bleu", 1, new Coord(3, 0));
     	System.out.println(p3.toString());
      
@@ -84,11 +84,11 @@ public class Main {
       
         Pion p6 = new Pion("Bleu", 1, new Coord(3, 6));
     	System.out.println(p6.toString());
-       
+       */
         
         Pion p7 = new Pion("Bleu", 1, new Coord(5, 6));
     	System.out.println(p7.toString());
-        System.out.println(p7.isMoveOk(6, 2, d1));*/
+        System.out.println(p7.isMoveOk(6, 2, d1));
         
      
 		//-----DEBUT CREATION CASES-----//

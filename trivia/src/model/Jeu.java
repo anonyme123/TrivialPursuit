@@ -1,14 +1,9 @@
+
 package model;
 
 import java.util.List;
 import java.util.Map;
-/**
- * Défini le Joueur Actif, pose une question au joueur et affiche le vainqueur si une personne a 6 camemberts
- * @author Sébastien
- *
- */
-
-
+//////
 public class Jeu {
 	
 
@@ -23,27 +18,7 @@ public class Jeu {
 	private int idJoueurActif;
 	
 	//Constructeur par default 
-	/**
-	 * @deprecated
-	 * @param largeur
-	 * @param hauteur
-	 * @param nbreCase
-	 * @param listeCases
-	 * @param nbreJoueurs
-	 * @param listeJoueurs
-	 * @param joueurActif
-	 */
-	public Jeu(int largeur, int hauteur, int nbreCase, List<AbstractCase> listeCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif)
-	{
-		this.largeur=largeur;/* a voir si utile */
-		this.hauteur=hauteur;
-		this.nbreCases=nbreCases; //est-ce que c'est pas toujours le même ?
-		this.nbreJoueurs=nbreJoueurs;
-		this.joueurActif = joueurActif;
-		this.listeJoueurs = listeJoueurs;
-		this.idJoueurActif = joueurActif.getNumero();
-		this.listeCases = listeCases;
-	}	
+	
 	
 	public Jeu(int largeur, int hauteur, int nbreCase, Map<Coord,AbstractCase> mapCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif) {
 		this.largeur=largeur;/* a voir si utile */
@@ -170,3 +145,4 @@ public class Jeu {
 	}
 
 }
+
