@@ -150,7 +150,7 @@ public class Main {
 			        System.out.println(jeu.afficheVainqueur());*/
 			        System.out.println(j1);
 			        
-			        Question q2 = jeu.poseQuestion(0, 0);
+			        Question q2 = jeu.poseQuestion(6, 3);
 			        System.out.println(q2.toString());
 		
 			      
