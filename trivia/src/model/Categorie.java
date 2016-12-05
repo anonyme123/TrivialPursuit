@@ -1,13 +1,19 @@
+//AUTEUR : Gael Venin
+
+//DESCRIPTION: 
+//Enumeration des categories, elles sont utiles pour les enums Couleur
+
+//INFO : 
+//
+//
 package model;
 
-//Auteur Gael Venin
-
-public enum Categorie {//lolol
-
+public enum Categorie {
 	INFORMATIQUE,
 	LYONBYNIGHT,
 	DIVERTISSEMENT,
 	SPORT,
 	VOYAGE,
-	MUSIQUE;
+	MUSIQUE,
+	BONUS;
 }

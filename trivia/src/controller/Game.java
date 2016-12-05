@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import model.AbstractCase;
+import model.CaseBonus;
+import model.CaseCam;
+import model.CaseNormale;
+import model.Coord;
+import model.Couleur;
+import model.De;
+import model.Joueur;
+import model.Pion;
+import model.Jeu;
 
-import model.*;
-
-////
 public class Game {
 
 	private Jeu jeu;
@@ -33,8 +40,6 @@ public class Game {
 		listeJoueurs.add(j4);
 		listeJoueurs.add(j5);
 		listeJoueurs.add(j6);
-		
-			
 		
 		//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
 		 int[][] in = { 
@@ -76,16 +81,8 @@ public class Game {
 		 
 		//----- FIN CREATION CASES -----//
 		
-		
-		
-		
-	
-		//-----Création du De-----//
-		
-		
 		//-----Création du Jeu-----//
 		//jeu = new Jeu(4,4,3,listeCases,6,listeJoueurs,j1);
-		
 	}
 
 
