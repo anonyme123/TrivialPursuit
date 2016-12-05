@@ -1,4 +1,4 @@
-package model;
+package Object;
 
 public class Joueur {
 

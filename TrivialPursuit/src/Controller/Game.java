@@ -1,21 +1,26 @@
-package controller;
+package Controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.De;
-import model.Jeu;
-import model.*;
+import Object.AbstractCase;
+import Object.CaseNormale;
+import Object.Couleur;
+import Object.De;
+import Object.Jeu;
+import Object.Pion;
+import Object.Coord;
+import Object.Joueur;
 
 public class Game {
-
 	private Jeu jeu;
 	private De de;
+	private Joueur jActif;
 	
 	public void init(){ //Initialisation du jeu
 		//Création des 6 joueurs
 		Joueur j1 = new Joueur("URBE",1,new Pion("Bleue",1,new Coord(0,0)));
-		Joueur j2 = new Joueur("TALBOT",2,new Pion("Rougz",1,new Coord(0,3)));
+		Joueur j2 = new Joueur("TALBOT",2,new Pion("Rouge",1,new Coord(0,3)));
 		Joueur j3 = new Joueur("VENIN",3,new Pion("Vert",1,new Coord(0,5)));
 		Joueur j4 = new Joueur("DELORME",4,new Pion("Jaune",1,new Coord(5,0)));
 		Joueur j5 = new Joueur("FAURIE",5,new Pion("Orange",1,new Coord(4,0)));
@@ -46,8 +51,11 @@ public class Game {
 	
 	public void lancerJeu(){
 		if (jeu !=  null) {
-			jeu.getJoueurActif();
-			de.lancer();
+			jActif = jeu.getJoueurActif();
+			jActif.lancerDe();
+			//se deplacer
+			
+			jActif.poseQuestion();
 			
 			
 		}
