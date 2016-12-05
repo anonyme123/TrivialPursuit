@@ -11,9 +11,10 @@ import model.CaseCam;
 import model.CaseNormale;
 import model.Coord;
 import model.Couleur;
+import model.De;
 import model.Joueur;
 import model.Pion;
-
+//
 public class Game {
 
 	private Jeu jeu;
@@ -40,7 +41,7 @@ public class Game {
 		listeJoueurs.add(j5);
 		listeJoueurs.add(j6);
 		
-		//-----DEBUT CREATION CASES-----//
+			
 		
 		//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
 		 int[][] in = { 
