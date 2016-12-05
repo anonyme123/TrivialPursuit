@@ -1,4 +1,7 @@
 import java.awt.EventQueue;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -10,7 +13,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//LANCEMENT DE L'IHM
+	/*	//LANCEMENT DE L'IHM
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
@@ -61,7 +64,7 @@ public class Main {
         System.out.println("13"+p2.isMoveOk(6, 5, d1));
         System.out.println("13"+p2.isMoveOk(6, 4, d1));
         System.out.println("14"+p2.isMoveOk(6, 2, d1));
-        
+        */
         /*
         Pion p3 = new Pion("Bleu", 1, new Coord(3, 0));
     	System.out.println(p3.toString());
@@ -85,25 +88,51 @@ public class Main {
     	System.out.println(p7.toString());
         System.out.println(p7.isMoveOk(6, 2, d1));*/
         
-      //CREATION DES CASES
-        int[][] in = {
-        		{0,1,1},{0,2,3},
-        		{1,0,2},{1,3,2},{1,6,2},
-        		{2,0,5},{2,3,2},{2,6,0},
-        		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
-        		{4,0,1},{4,3,4},{4,6,3},
-        		{5,0,0},{5,3,5},{5,6,5},
-        		{6,1,4},{6,2,5},{6,4,1},{6,5,0}
-        		
-        };
-        
-     /*   System.out.println(in.length);
-        Map<Coord,Couleur> map = new HashMap<>();
-        for (int x = 0 ; x <= 23 ; x++) {
-        	map.put(new Coord(in[x][0], in[x][1]), Couleur.getCouleur(in[x][2]));
-        }
-        
-        System.out.println(map);*/
+     
+		//-----DEBUT CREATION CASES-----//
+		
+				//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
+				 int[][] in = { 
+			          		{0,1,1},{0,2,3},
+			          		{1,0,2},{1,3,2},{1,6,2},
+			          		{2,0,5},{2,3,2},{2,6,0},
+			          		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
+			          		{4,0,1},{4,3,4},{4,6,3},
+			          		{5,0,0},{5,3,5},{5,6,5},
+			          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
+			          };
+				//Affichage longueur du tableau
+				System.out.println(in.length); 
+			          
+			        
+			     //-----Creation des CASES NORMALES-----//
+				 Map<Coord,AbstractCase> cases = new HashMap<>();
+			     	for (int x = 0 ; x <= 23 ; x++){
+			          	cases.put(
+			          			new Coord(in[x][0], in[x][1]), 
+			          			new CaseNormale(
+			          					Couleur.getCouleur(in[x][2]),	// couleur 
+			          							in[x][0], 				// x		
+			          							in[x][1]				// y
+			          							)
+			          	);
+			          }
+			     	
+			     //-----Creation CASES CAMEMBERT + BONUS-----//
+			      cases.put(new Coord(0,0), new CaseCam(Couleur.ROUGE, 0, 0)); 
+			      cases.put(new Coord(0,3), new CaseCam(Couleur.BLEU, 0, 3));
+			      cases.put(new Coord(0,6), new CaseCam(Couleur.JAUNE, 0, 6));
+			      cases.put(new Coord(6,0), new CaseCam(Couleur.ORANGE, 6, 0));
+			      cases.put(new Coord(6,3), new CaseCam(Couleur.VIOLET, 6, 3));
+			      cases.put(new Coord(6,6), new CaseCam(Couleur.VERTE, 6, 6));
+			      cases.put(new Coord(3,3), new CaseBonus(Couleur.NOIR, 3, 3)); //CASE BONUS
+			      
+			      System.out.println(" \n Affichage de toutes les cases : \n");
+			      System.out.println(cases);
+				//----- FIN CREATION CASES -----//
+		
+		
+		
 	}
 
 }

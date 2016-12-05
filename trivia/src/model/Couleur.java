@@ -1,24 +1,34 @@
-package model;
+//AUTEUR : Gael Venin
 
-//Auteur Gael Venin
+//DESCRIPTION: 
+//Enumeration des couleurs de cases, elles sont liees aux categories 
+
+//INFO : 
+//
+
+package model;
 public enum Couleur {
 	
-	VERTE(Categorie.INFORMATIQUE),
-	ROUGE(Categorie.LYONBYNIGHT),
-	BLEU(Categorie.DIVERTISSEMENT),
-	ROSE(Categorie.SPORT),
-	ORANGE(Categorie.VOYAGE),
-	JAUNE(Categorie.MUSIQUE);
+	VERTE(Categorie.INFORMATIQUE),	//0 
+	ROUGE(Categorie.LYONBYNIGHT),	//1
+	BLEU(Categorie.DIVERTISSEMENT), //2
+	VIOLET(Categorie.SPORT),		//3
+	ORANGE(Categorie.VOYAGE),		//4
+	JAUNE(Categorie.MUSIQUE),		//5
+	NOIR(Categorie.BONUS); 			//6 => case BONUS
 	
 	Categorie theme;
 	
 	public Categorie getTheme() {
 		return theme;
 	}
-
-		
 	
 	Couleur(Categorie theme) {
-		this.theme = theme;//lalala
+		this.theme = theme;
+	}
+	
+	public static Couleur getCouleur(int pos) {
+		return Couleur.values()[pos];
+		// return Couleur.VERTE;
 	}
 }
