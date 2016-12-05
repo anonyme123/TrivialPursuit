@@ -3,6 +3,10 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.De;
+import model.Jeu;
+import model.*;
+
 public class Game {
 
 	private Jeu jeu;

@@ -2,10 +2,10 @@ package model;
 
 public class Joueur {
 
-	//--------------------ATTRIBUTS--------------------
+	//--------------------ATTRIBUTS----------------------
 	public String nom;
 	public int numero;
-	public  int nb_camembert = 0; 
+	private  int nb_camembert = 0; 
 	public Pion pion;
 	
 	
@@ -27,7 +27,7 @@ public class Joueur {
 
 
 	public void setNb_camembert(int nb_camembert) {
-		this.nb_camembert = nb_camembert;
+		nb_camembert = nb_camembert;
 	}
 
 
@@ -69,14 +69,28 @@ public class Joueur {
 		
 	}
 	
-	public void repondreQuestion()
+	public void repondreQuestion(Question q, int i)
 	{
-		
+		if(i==q.getCorrectanswer()){
+			System.out.println("Bravo vous avez répondu juste !");
+		}
+		else{
+			System.out.println("Malheureusement c'est faux ...");
+		}
+	}
+	public void repondreQuestionCam(Question q, int i){
+		if(i==q.getCorrectanswer()){
+			System.out.println("Bravo vous avez répondu juste !");
+			nb_camembert ++;
+		}
+		else{
+			System.out.println("Malheureusement c'est faux ...");
+		}
 	}
 	
-	public void poseQuestion(Question q){
-		
-		
+	public Question poseQuestion(){
+		Question question = new Question();
+		return question;
 	}
 	
 	
