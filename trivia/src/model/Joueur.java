@@ -2,7 +2,7 @@ package model;
 
 public class Joueur {
 
-	//--------------------ATTRIBUTS----------------------
+	//--------------------ATTRIBUTS-----------------------
 	public String nom;
 	public int numero;
 	private  int nb_camembert = 0; 

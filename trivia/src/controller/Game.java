@@ -30,9 +30,9 @@ public class Game {
 		listeJoueurs.add(j6);
 		
 		//Création Case
-		CaseNormale case1 = new CaseNormale(Couleur.BLEU);
-		CaseNormale case2 = new CaseNormale(Couleur.VERTE);
-		CaseNormale case3 = new CaseNormale(Couleur.ROUGE);
+		CaseNormale case1 = new CaseNormale(Couleur.BLEU,1,1);
+		CaseNormale case2 = new CaseNormale(Couleur.VERTE,2,2);
+		CaseNormale case3 = new CaseNormale(Couleur.ROUGE,1,1);
 		//Création list et ajout des cases
 		List<AbstractCase> listeCases = new ArrayList<AbstractCase>();
 		//Création du De
