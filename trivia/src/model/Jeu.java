@@ -1,13 +1,15 @@
 package model;
 
 import java.util.List;
+import java.util.Map;
 //////
 public class Jeu {
 	
 
 	private static int largeur;
 	private static int hauteur;
-	private List<AbstractCase> listeCases;
+	private List<AbstractCase> listeCases; //TODO remplacer par une map
+	private Map<Coord,AbstractCase> mapCases;
 	private static int nbreCases;
 	private int nbreJoueurs;
 	private List<Joueur> listeJoueurs;
@@ -15,6 +17,16 @@ public class Jeu {
 	private int idJoueurActif;
 	
 	//Constructeur par default 
+	/**
+	 * @deprecated
+	 * @param largeur
+	 * @param hauteur
+	 * @param nbreCase
+	 * @param listeCases
+	 * @param nbreJoueurs
+	 * @param listeJoueurs
+	 * @param joueurActif
+	 */
 	public Jeu(int largeur, int hauteur, int nbreCase, List<AbstractCase> listeCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif)
 	{
 		this.largeur=largeur;/* a voir si utile */
@@ -26,6 +38,18 @@ public class Jeu {
 		this.idJoueurActif = joueurActif.getNumero();
 		this.listeCases = listeCases;
 	}	
+	
+	public Jeu(int largeur, int hauteur, int nbreCase, Map<Coord,AbstractCase> mapCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif) {
+		this.largeur=largeur;/* a voir si utile */
+		this.hauteur=hauteur;
+		this.nbreCases=nbreCases; //est-ce que c'est pas toujours le même ?
+		this.nbreJoueurs=nbreJoueurs;
+		this.joueurActif = joueurActif;
+		this.listeJoueurs = listeJoueurs;
+		this.idJoueurActif = joueurActif.getNumero();
+		this.listeCases = listeCases;
+		this.mapCases = mapCases;
+	}
 	
 	public 	Joueur afficheJoueurActif (){
 		return joueurActif;
@@ -121,6 +145,22 @@ public class Jeu {
 
 	public void setJoueurActif(Joueur joueurActif) {
 		this.joueurActif = joueurActif;
+	}
+	
+	public Question poseQuestion(Coord coord){
+		Question question = null;
+		AbstractCase laCase = mapCases.get(coord);
+		if (laCase != null) {
+			Couleur couleur = laCase.couleur;
+			question = new Question(couleur);
+		}
+		
+		return question;
+}
+
+	public Question poseQuestion(int i, int j) {
+	
+		return poseQuestion(new Coord(i,j));
 	}
 
 }

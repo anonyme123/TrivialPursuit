@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.SQLException;
+
 public class Joueur {
 
 	//--------------------ATTRIBUTS-----------------------
@@ -88,11 +90,12 @@ public class Joueur {
 		}
 	}
 	
-	public Question poseQuestion(){
-		Question question = new Question();
+	public Question poseQuestion(AbstractCase case1){
+		Question question = new Question(case1);
 		return question;
 	}
 	
+
 	
 	
 	@Override
@@ -100,4 +103,7 @@ public class Joueur {
 		return  nom + " Joueur numero " + numero + " pion de couleur " + pion.getCouleur() + " ," + nb_camembert
 				+ " camemberts ";
 	}
+
+
+	
 }

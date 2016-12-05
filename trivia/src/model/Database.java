@@ -44,7 +44,7 @@ public class Database {
              pstmt.setString(2, "L'Ayers Rock");
              pstmt.setString(3, "Le Boston");
              pstmt.setString(4, "Les Poupées Russes");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 2);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -52,7 +52,7 @@ public class Database {
              pstmt.setString(2, "Fourvière");
              pstmt.setString(3, "Vieux Lyon");
              pstmt.setString(4, "Bellecour");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 2);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -60,7 +60,7 @@ public class Database {
              pstmt.setString(2, "1997");
              pstmt.setString(3, "1998");
              pstmt.setString(4, "1999");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 3);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -68,7 +68,7 @@ public class Database {
              pstmt.setString(2, "L'Eden Rock");
              pstmt.setString(3, "Le Court-Circuit");
              pstmt.setString(4, "Le malting pot");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 1);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -76,7 +76,7 @@ public class Database {
              pstmt.setString(2, "Les Quais du Rhône");
              pstmt.setString(3, "Confluences");
              pstmt.setString(4, "Le Vieux Lyon");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 3);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -84,7 +84,7 @@ public class Database {
              pstmt.setString(2, "Rue de la République");
              pstmt.setString(3, "Rue Sainte Catherine");
              pstmt.setString(4, "Rue Mercière");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 2);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -92,7 +92,7 @@ public class Database {
              pstmt.setString(2, "Fourvière");
              pstmt.setString(3, "Etats-Unis");
              pstmt.setString(4, "Monplaisir");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 1);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -100,7 +100,7 @@ public class Database {
              pstmt.setString(2, "Blandan");
              pstmt.setString(3, "Tête-d'Or");
              pstmt.setString(4, "Miribel");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 2);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -108,7 +108,7 @@ public class Database {
              pstmt.setString(2, "Vélib'");
              pstmt.setString(3, "Vélibe");
              pstmt.setString(4, "Vélo'v");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 3);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
@@ -116,7 +116,7 @@ public class Database {
              pstmt.setString(2, "Foyer");
              pstmt.setString(3, "Double Mixte");
              pstmt.setString(4, "Oxxo");
-             pstmt.setString(5, "Lyon By Night");
+             pstmt.setString(5, "LyonByNight");
              pstmt.setInt(6, 1);
              pstmt.executeUpdate();
              pstmt = conn.prepareStatement("insert into questions (question,answer1,answer2,answer3,category,correctanswer) values(?,?,?,?,?,?)");
