@@ -5,9 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import model.Joueur;
+import controller.Game;
 
 public class IHM extends JFrame {
 
@@ -46,32 +50,32 @@ public class IHM extends JFrame {
 		picLabel.setSize(292, 283);
 		startscreen.add(picLabel);
 		
-		TextField joueur1 = new TextField();
+		final TextField joueur1 = new TextField();
 		joueur1.setBounds(53, 106, 69, 19);
 		joueur1.setText("Joueur 1");
 		startscreen.add(joueur1);
 		
-		TextField joueur2 = new TextField();
+		final TextField joueur2 = new TextField();
 		joueur2.setBounds(53, 141, 69, 19);
 		joueur2.setText("Joueur 2");
 		startscreen.add(joueur2);
 		
-		TextField joueur3 = new TextField();
+		final TextField joueur3 = new TextField();
 		joueur3.setBounds(53, 179, 69, 19);
 		joueur3.setText("Joueur 3");
 		startscreen.add(joueur3);
 		
-		TextField joueur4 = new TextField();
+		final TextField joueur4 = new TextField();
 		joueur4.setBounds(53, 214, 69, 19);
 		joueur4.setText("Joueur 4");
 		startscreen.add(joueur4);
 		
-		TextField joueur5 = new TextField();
+		final TextField joueur5 = new TextField();
 		joueur5.setBounds(53, 252, 69, 19);
 		joueur5.setText("Joueur 5");
 		startscreen.add(joueur5);
 		
-		TextField joueur6 = new TextField();
+		final TextField joueur6 = new TextField();
 		joueur6.setBounds(53, 291, 69, 19);
 		joueur6.setText("Joueur 6");
 		startscreen.add(joueur6);
@@ -80,7 +84,8 @@ public class IHM extends JFrame {
 		btnValider.setBounds(249, 466, 84, 25);
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                cardLayout.show(cardPanel, "2");
+				Game.initJoueurs(joueur1.getText(), joueur2.getText(), joueur3.getText(), joueur4.getText(), joueur5.getText(), joueur6.getText());
+				cardLayout.show(cardPanel, "2");
             }
 		});
 		startscreen.add(btnValider);
@@ -103,61 +108,71 @@ public class IHM extends JFrame {
 		btnJouer.setBounds(249, 516, 84, 25);
 		btnJouer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			/////// remplissage du jpanel gameboard ///////
+				
+				for (int i = 1; i <= 49; i++) {
+					JPanel square = new JPanel( new BorderLayout() );
+					gameboard.add( square );
+					
+					if (i==1 || i==15 || i==26 || i==39 || i==42) square.setBackground(new Color(255,91,43)); //orange
+					if (i==2 || i==11 || i==24 || i==44 || i==49) square.setBackground(new Color(51,104,212)); //bleu
+					if (i==3 || i==14 || i==18 || i==23 || i==43 || i==48) square.setBackground(new Color(87,208,68)); //vert
+					if (i==4 || i==7 || i==36 || i==47 || i==21) square.setBackground(new Color(233,61,96)); //rouge
+					if (i==5 || i==28 || i==29 || i==46 || i==8) square.setBackground(new Color(177,72,185)); //violet
+					if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(new Color(249,254,107)); //jaune
+					
+					if (i==25) square.setBackground(Color.black); //case du milieu
+					
+					/////// cases camemberts ///////
+					if (i==1){
+						ImageIcon imageIcon = new ImageIcon("ressources/musique.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if (i==7){
+						ImageIcon imageIcon = new ImageIcon("ressources/geek.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if (i==22){
+						ImageIcon imageIcon = new ImageIcon("ressources/histoire.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if (i==28){
+						ImageIcon imageIcon = new ImageIcon("ressources/sport.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if (i==43){
+						ImageIcon imageIcon = new ImageIcon("ressources/lyon.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if (i==49){
+						ImageIcon imageIcon = new ImageIcon("ressources/voyage.jpg");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					
+					Collections.reverse(Game.getListeJoueurs());
+					for(Joueur j: Game.getListeJoueurs()) {
+						if(i == 25) {
+							System.out.println(j.getPion().getCouleur());
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+					}
+					
+				}	
+		        ///////fin du remplissage du jpanel gameboard /////////
                 cardLayout.show(cardPanel, "3");
             }
 		});
 		rules.add(btnJouer);
 		
-		/////// remplissage du jpanel gameboard ///////
 		
-		for (int i = 1; i <= 49; i++) {
-			JPanel square = new JPanel( new BorderLayout() );
-			gameboard.add( square );
-			
-			if (i==1 || i==15 || i==26 || i==39 || i==42) square.setBackground(new Color(255,91,43)); //orange
-			if (i==2 || i==11 || i==24 || i==44 || i==49) square.setBackground(new Color(51,104,212)); //bleu
-			if (i==3 || i==14 || i==18 || i==23 || i==43 || i==48) square.setBackground(new Color(87,208,68)); //vert
-			if (i==4 || i==7 || i==36 || i==47 || i==21) square.setBackground(new Color(233,61,96)); //rouge
-			if (i==5 || i==28 || i==29 || i==46 || i==8) square.setBackground(new Color(177,72,185)); //violet
-			if (i==6 || i==22 || i==27 || i==32 || i==35 || i==45) square.setBackground(new Color(249,254,107)); //jaune
-			
-			if (i==25) square.setBackground(Color.black); //case du milieu
-			
-			/////// cases camemberts ///////
-			if (i==1){
-				ImageIcon imageIcon = new ImageIcon("ressources/musique.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			if (i==7){
-				ImageIcon imageIcon = new ImageIcon("ressources/geek.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			if (i==22){
-				ImageIcon imageIcon = new ImageIcon("ressources/histoire.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			if (i==28){
-				ImageIcon imageIcon = new ImageIcon("ressources/sport.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			if (i==43){
-				ImageIcon imageIcon = new ImageIcon("ressources/lyon.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			if (i==49){
-				ImageIcon imageIcon = new ImageIcon("ressources/voyage.jpg");
-			    JLabel label = new JLabel(imageIcon);
-			    square.add(label);
-			}
-			
-			
-		}	
-        ///////fin du remplissage du jpanel gameboard /////////
         
         getContentPane().add(cardPanel, BorderLayout.CENTER);
         cardPanel.add(startscreen, "1");
