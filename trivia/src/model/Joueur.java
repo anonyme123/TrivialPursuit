@@ -23,6 +23,10 @@ public class Joueur {
 	}
 	
 
+	public Pion getPion() {
+		return pion;
+	}
+
 	public int getNb_camembert() {
 		return nb_camembert;
 	}
