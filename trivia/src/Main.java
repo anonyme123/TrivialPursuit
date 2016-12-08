@@ -93,67 +93,65 @@ public class Main {
      
 		//-----DEBUT CREATION CASES-----//
 		
-				//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
-				 int[][] in = { 
-			          		{0,1,1},{0,2,3},
-			          		{1,0,2},{1,3,2},{1,6,2},
-			          		{2,0,5},{2,3,2},{2,6,0},
-			          		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
-			          		{4,0,1},{4,3,4},{4,6,3},
-			          		{5,0,0},{5,3,5},{5,6,5},
-			          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
-			          };
-				//Affichage longueur du tableau
-				System.out.println(in.length); 
+		//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
+		 int[][] in = { 
+	          		{0,1,1},{0,2,3},
+	          		{1,0,2},{1,3,2},{1,6,2},
+	          		{2,0,5},{2,3,2},{2,6,0},
+	          		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
+	          		{4,0,1},{4,3,4},{4,6,3},
+	          		{5,0,0},{5,3,5},{5,6,5},
+	          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
+	          };
+		//Affichage longueur du tableau
+		System.out.println(in.length); 
 			          
 			        
-			     //-----Creation des CASES NORMALES-----//
-				 Map<Coord,AbstractCase> cases = new HashMap<>();
-			     	for (int x = 0 ; x <= 23 ; x++){
-			          	cases.put(
-			          			new Coord(in[x][0], in[x][1]), 
-			          			new CaseNormale(
-			          					Couleur.getCouleur(in[x][2]),	// couleur 
-			          							in[x][0], 				// x		
-			          							in[x][1]				// y
-			          							)
-			          	);
-			          }
-			     	
-			     //-----Creation CASES CAMEMBERT + BONUS-----//
-			      cases.put(new Coord(0,0), new CaseCam(Couleur.ROUGE, 0, 0)); 
-			      cases.put(new Coord(0,3), new CaseCam(Couleur.BLEU, 0, 3));
-			      cases.put(new Coord(0,6), new CaseCam(Couleur.JAUNE, 0, 6));
-			      cases.put(new Coord(6,0), new CaseCam(Couleur.ORANGE, 6, 0));
-			      cases.put(new Coord(6,3), new CaseCam(Couleur.VIOLET, 6, 3));
-			      cases.put(new Coord(6,6), new CaseCam(Couleur.VERTE, 6, 6));
-			      cases.put(new Coord(3,3), new CaseBonus(Couleur.NOIR, 3, 3)); //CASE BONUS
+	     //-----Creation des CASES NORMALES-----//
+		 Map<Coord,AbstractCase> cases = new HashMap<>();
+	     	for (int x = 0 ; x <= 23 ; x++){
+	          	cases.put(
+	          			new Coord(in[x][0], in[x][1]), 
+	          			new CaseNormale(
+	          					Couleur.getCouleur(in[x][2]),	// couleur 
+	          							in[x][0], 				// x		
+	          							in[x][1]				// y
+	          							)
+	          	);
+	          }
+	     	
+	     //-----Creation CASES CAMEMBERT + BONUS-----//
+	     cases.put(new Coord(0,0), new CaseCam(Couleur.ROUGE, 0, 0)); 
+	     cases.put(new Coord(0,3), new CaseCam(Couleur.BLEU, 0, 3));
+	     cases.put(new Coord(0,6), new CaseCam(Couleur.JAUNE, 0, 6));
+	     cases.put(new Coord(6,0), new CaseCam(Couleur.ORANGE, 6, 0));
+	     cases.put(new Coord(6,3), new CaseCam(Couleur.VIOLET, 6, 3));
+	     cases.put(new Coord(6,6), new CaseCam(Couleur.VERTE, 6, 6));
+	     cases.put(new Coord(3,3), new CaseBonus(Couleur.NOIR, 3, 3)); //CASE BONUS
 			      
-			      System.out.println(" \n Affichage de toutes les cases : \n");
-			      System.out.println(cases);
-				//----- FIN CREATION CASES -----//
+	     System.out.println(" \n Affichage de toutes les cases : \n");
+	     System.out.println(cases);
+		 //----- FIN CREATION CASES -----//
 		
-			      //test pose question
-			      	Pion pJoueur1 = new Pion("Bleue",1,new Coord(0,1));
-			        Joueur j1 = new Joueur("URBE",1,pJoueur1);
-			        AbstractCase case1 = new CaseNormale(Couleur.VERTE,0,1);
-			        List<Joueur> listeJoueurs = new ArrayList<Joueur>();
-			        List<AbstractCase> listeCases = new ArrayList<AbstractCase>();
-			        listeJoueurs.add(j1);
-			        listeCases.add(case1);
-			        Jeu jeu = new Jeu (10, 10, 10, cases, 1, listeJoueurs, j1);
-			        
-			        
-			      /*  Question q2 = j1.poseQuestion();
-			        System.out.println(q2.toString());
-			        j1.repondreQuestionCam(q2, 2);
-			        System.out.println(jeu.afficheVainqueur());*/
-			        System.out.println(j1);//
-			        
-			        Question q2 = jeu.poseQuestion(6, 6);
-			        System.out.println(q2.toString());
+		//test pose question
+		Pion pJoueur1 = new Pion("Bleue",1,new Coord(0,1));
+		Joueur j1 = new Joueur("URBE",1,pJoueur1);
+		AbstractCase case1 = new CaseNormale(Couleur.VERTE,0,1);
+		List<Joueur> listeJoueurs = new ArrayList<Joueur>();
+		List<AbstractCase> listeCases = new ArrayList<AbstractCase>();
+		listeJoueurs.add(j1);
+		listeCases.add(case1);
+		Jeu jeu = new Jeu (10, 10, 10, cases, 1, listeJoueurs, j1);
+		    
+		    
+		/*  Question q2 = j1.poseQuestion();
+		System.out.println(q2.toString());
+		j1.repondreQuestionCam(q2, 2);
+		System.out.println(jeu.afficheVainqueur());*/
+		System.out.println(j1);//
 		
-			      
+		Question q2 = jeu.poseQuestion(6, 6);
+		System.out.println(q2.toString());
+      
 	}
-
 }

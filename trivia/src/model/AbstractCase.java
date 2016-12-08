@@ -9,7 +9,6 @@
 //
 package model;
 
-
 public abstract class AbstractCase {
 	
 	public boolean isCamembert=false; //Par defaut une case n'a pas de camembert
@@ -19,21 +18,20 @@ public abstract class AbstractCase {
 	public int posY; 
 
 	public AbstractCase(Couleur couleur, int posX, int posY, boolean isCamembert) {
-				super();
-				this.isCamembert = isCamembert;
-				this.couleur = couleur;
-				this.posX = posX;
-				this.posY = posY;
-			}
+		super();
+		this.isCamembert = isCamembert;
+		this.couleur = couleur;
+		this.posX = posX;
+		this.posY = posY;
+	}
 		
-			@Override
-			public String toString() {
-				return "AbstractCase [" + "isCamembert=" + isCamembert + ", isSelected=" 
-						+ isSelected+ ", couleur=" + couleur + ", posX=" + posX + ", posY=" + posY
-						+ "] \n";
-			}
+	@Override
+	public String toString() {
+		return "AbstractCase [" + "isCamembert=" + isCamembert + ", isSelected=" 
+				+ isSelected+ ", couleur=" + couleur + ", posX=" + posX + ", posY=" + posY
+				+ "] \n";
+	}
 			
-	//------------------------------------
 	//ACCESSEURS ET MUTATEURS
 	public int getPosX()
 	{
@@ -63,7 +61,6 @@ public abstract class AbstractCase {
 		this.couleur = couleur;
 	}
 
-	//------------------------------------	
 	//Methodes a utiliser depuis Joueur lors de ChoisirCaseDestination
 	public void isSelected()
 	{

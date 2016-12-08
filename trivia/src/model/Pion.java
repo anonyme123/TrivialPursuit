@@ -1,10 +1,20 @@
+//AUTEUR : CLAIRE DELORME
+
+
+//DESCRIPTION:
+//
+
+
+//INFO :
+//
+//
 package model;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-///
+
 public class Pion {
 
 	private String couleur;
@@ -20,7 +30,7 @@ public class Pion {
 		this.coord = coord;
 	}
 
-	public boolean seDeplacer(int x, int y) { // Fait se d�placer le pion
+	public boolean seDeplacer(int x, int y) { // Fait se deplacer le pion
 		if (coord.x == x && coord.y == y)
 			return false;
 		else
@@ -50,7 +60,7 @@ public class Pion {
 	
 	
 	/*
-	// V�rifie si le mouvemement eput �tre effectu� par le joueur
+	// Verifie si le mouvemement peut etre effectue par le joueur
 
 	public boolean isMoveOk(int xFinal, int yFinal, De de) {
 		int reste = 0, xFinalOk = 0, yFinalOk = 0;

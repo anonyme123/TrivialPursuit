@@ -5,7 +5,6 @@
 ////
 package model;
 
-//
 public class CaseBonus extends CaseCam {
 	
 	public CaseBonus(Couleur couleur, int posX, int posY) {

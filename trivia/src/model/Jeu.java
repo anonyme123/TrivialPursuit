@@ -1,16 +1,20 @@
+//AUTEUR : Sebastien URBE
 
+
+//DESCRIPTION:
+//Peut changer le Joueur Actif, Afficher le vainqueur si quelqu'un a 6 camembert, et pose une question à un joueur
+
+
+//INFO :
+//
+//
 package model;
 
 import java.util.List;
 import java.util.Map;
-/**
- * Peut changer le Joueur Actif, Afficher le vainqueur si quelqu'un a 6 camembert, et pose une question à un joueur
- * @author Sébastien
- *
- */
+
 public class Jeu {
 	
-
 	private static int largeur;
 	private static int hauteur;
 	private List<AbstractCase> listeCases; //TODO remplacer par une map
@@ -22,8 +26,6 @@ public class Jeu {
 	private int idJoueurActif;
 	
 	//Constructeur par default 
-	
-	
 	public Jeu(int largeur, int hauteur, int nbreCase, Map<Coord,AbstractCase> mapCases, int nbreJoueurs, List<Joueur> listeJoueurs, Joueur joueurActif) {
 		this.largeur=largeur;/* a voir si utile */
 		this.hauteur=hauteur;
@@ -55,13 +57,6 @@ public class Jeu {
 			}
 		}
 	}
-	
-		/*if(joueurActif == 1)
-			joueurActif = 2;
-		else if (joueurActif==2)
-			joueurActif =3;
-		else if (joueurActif)*/
-
 	
 	public String afficheVainqueur()
 	{
@@ -141,16 +136,12 @@ public class Jeu {
 		}
 		
 		return question;
-}
+	}
 
 	public Question poseQuestion(int i, int j) {
 	
 		return poseQuestion(new Coord(i,j));
 	}
-
-
-
-
 
 	public static Coord conversion(int nbreCase){
 		Coord coord=new Coord(0,0);
@@ -203,7 +194,7 @@ public class Jeu {
 			coord.y=0;
 			coord.x=((nbreCase-7*6)-1);
 		}
-		return coord;//BLAblab
+		return coord;
 	}
 }
 

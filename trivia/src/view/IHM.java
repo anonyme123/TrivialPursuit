@@ -1,3 +1,13 @@
+//AUTEUR : Hugo TALBOT
+
+
+//DESCRIPTION:
+//
+
+
+//INFO :
+//
+//
 package view;
 
 import java.awt.*;
@@ -171,7 +181,6 @@ public class IHM extends JFrame {
             }
 		});
 		rules.add(btnJouer);
-		
 		
         
         getContentPane().add(cardPanel, BorderLayout.CENTER);
