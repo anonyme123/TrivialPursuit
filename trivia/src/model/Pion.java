@@ -1,3 +1,5 @@
+package model;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -5,9 +7,10 @@ import java.util.Set;
 ///
 public class Pion {
 
-	public String couleur;
-	public int idPion;
-	public Coord coord;
+	private String couleur;
+	private int idPion;
+	private Coord coord;
+	private Map<Coord,Set<Coord>> modele = new HashMap<Coord,Set<Coord>>(); //FIXME comment se le faire donner par Jeu
 
 	// Initialisation d'un pion
 	public Pion(String couleur, int idPion, Coord coord) {
@@ -26,7 +29,6 @@ public class Pion {
 		return true;
 	}
 	
-	private final Map<Coord,Set<Coord>> modele; //FIXME comment se le faire donner par Jeu
 	
 	public boolean isMoveOk2(int xFinal, int yFinal, De de) {
 		Map<Coord,Set<Coord>> casesNonParcourues = new HashMap<>(modele);	//toutes les cases du jeu non parcourues
@@ -47,7 +49,7 @@ public class Pion {
 	}
 	
 	
-
+	/*
 	// V�rifie si le mouvemement eput �tre effectu� par le joueur
 
 	public boolean isMoveOk(int xFinal, int yFinal, De de) {
@@ -100,7 +102,7 @@ public class Pion {
 					}
 				}else{
 					xFinalOk = coord.x - de.getNbAleatoire();
-					yFinalOk=coord.y;
+					private final yFinalOk=coord.y;
 				}
 			}
 			if (xFinalOk == xFinal && yFinalOk == yFinal) {
@@ -163,7 +165,7 @@ public class Pion {
 		}
 		return false;
 		
-	}
+	}*/
 
 	// Getters et Setters
 	public String getCouleur() {
@@ -196,6 +198,14 @@ public class Pion {
 
 	public void setY(int y) {
 		this.coord.y = y;
+	}
+	
+	public Map<Coord, Set<Coord>> getModele() {
+		return modele;
+	}
+		
+	public void setModele(Map<Coord, Set<Coord>> modele) {
+		this.modele = modele;
 	}
 
 	@Override
