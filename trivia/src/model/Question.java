@@ -8,9 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.derby.jdbc.EmbeddedDriver;
-
+/**
+ * Fais les requêtes vers la base de données pour poser les questions aux joueurs
+ * @author Sébastien
+ *
+ */
 public class Question {
-	/////
+	
 	Statement stmt;
 	ResultSet rs = null;
 	AbstractCase case1;

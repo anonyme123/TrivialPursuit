@@ -4,7 +4,7 @@ package model;
 import java.util.List;
 import java.util.Map;
 /**
- * Peut changer le Joueur Actif, Afficher le vainqueur si quelqu'un a 6 camemberts, et pose une question à un joueur
+ * Peut changer le Joueur Actif, Afficher le vainqueur si quelqu'un a 6 camembert, et pose une question à un joueur
  * @author Sébastien
  *
  */

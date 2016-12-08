@@ -154,6 +154,8 @@ public class IHM extends JFrame {
 			    JLabel label = new JLabel(imageIcon);
 			    square.add(label);
 			}
+			
+			
 		}	
         ///////fin du remplissage du jpanel gameboard /////////
         
