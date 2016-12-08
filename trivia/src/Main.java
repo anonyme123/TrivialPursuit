@@ -148,9 +148,9 @@ public class Main {
 			        System.out.println(q2.toString());
 			        j1.repondreQuestionCam(q2, 2);
 			        System.out.println(jeu.afficheVainqueur());*/
-			        System.out.println(j1);
+			        System.out.println(j1);//
 			        
-			        Question q2 = jeu.poseQuestion(6, 3);
+			        Question q2 = jeu.poseQuestion(6, 6);
 			        System.out.println(q2.toString());
 		
 			      
