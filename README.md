@@ -1,3 +1,3 @@
 # TrivialPursuit
 
-A simple TrivialPursuit game
+A basic TrivialPursuit game
