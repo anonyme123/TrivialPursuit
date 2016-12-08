@@ -41,6 +41,16 @@ public class Game {
 		listeJoueurs.add(j5);
 		listeJoueurs.add(j6);
 		
+		
+		
+		//-----Création du Jeu-----//
+		//jeu = new Jeu(4,4,3,listeCases,6,listeJoueurs,j1);
+	}
+
+
+	private void creationCases() {
+		// TODO Auto-generated method stub
+		
 		//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
 		 int[][] in = { 
 	          		{0,1,1},{0,2,3},
@@ -52,7 +62,7 @@ public class Game {
 	          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
 	          };
 		//Affichage longueur du tableau
-		System.out.println(in.length); 
+		//System.out.println(in.length); 
 	          
 	        
 	     //-----Creation des CASES NORMALES-----//
@@ -60,12 +70,7 @@ public class Game {
 	     	for (int x = 0 ; x <= 23 ; x++){
 	          	cases.put(
 	          			new Coord(in[x][0], in[x][1]), 
-	          			new CaseNormale(
-	          					Couleur.getCouleur(in[x][2]),	// couleur 
-	          							in[x][0], 				// x		
-	          							in[x][1]				// y
-	          							)
-	          	);
+	          			new CaseNormale(Couleur.getCouleur(in[x][2]),in[x][0],in[x][1])); //couleur,x,y
 	          }
 	     	
 	     //-----Creation CASES CAMEMBERT + BONUS-----//
@@ -80,16 +85,12 @@ public class Game {
 	      System.out.println(" \n Affichage de toutes les cases : \n");
 		 
 		//----- FIN CREATION CASES -----//
-		
-		//-----Création du Jeu-----//
-		//jeu = new Jeu(4,4,3,listeCases,6,listeJoueurs,j1);
 	}
-
-
-	private void creationCases() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
+	
+	
+	
 	
 	/*public void lancerJeu(){
 		if (jeu !=  null) {

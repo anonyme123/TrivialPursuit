@@ -2,8 +2,12 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * Stocke les valeurs X et Y définissant des coordonnées.
+ * @author Sébastien
+ *
+ */
 public class Coord implements Serializable {
-	
 	/**
 	 * 
 	 */

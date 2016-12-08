@@ -17,7 +17,7 @@ public class De {
 		return nbAleatoire;	
 	}
 	
-	//Getters et Setters
+	//Getter
 	public int getNbAleatoire() {
 		return nbAleatoire;
 	}

@@ -8,9 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.apache.derby.jdbc.EmbeddedDriver;
-
+/**
+ * Fais les requêtes vers la base de données pour poser les questions aux joueurs
+ * @author Sébastien
+ *
+ */
 public class Question {
-	////
+	
 	Statement stmt;
 	ResultSet rs = null;
 	AbstractCase case1;
@@ -33,9 +37,205 @@ public class Question {
 		this.correctanswer = correctanswer;
 	}
 
-	public Question() {
+	public Question(AbstractCase case1) {
 		
-	//	if(case1.)
+		this.case1 = case1;
+		
+		
+		System.out.println(case1.couleur.toString());
+		
+		if (Couleur.ROUGE.toString().equals(case1.couleur.toString())) {
+			System.out.println("here");
+			try {
+				Connection conn = null;
+				Driver derbyEmbeddedDriver = new EmbeddedDriver();
+		         DriverManager.registerDriver(derbyEmbeddedDriver);
+		         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+		         conn.setAutoCommit(false);
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery(
+						"select * from questions where category like 'LyonByNight' order by random() fetch first row only");
+				
+				while (rs.next()) {
+					try {
+						question = rs.getString(2);
+						answer1 = rs.getString(3);
+						answer2 = rs.getString(4);
+						answer3 = rs.getString(5);
+						category = rs.getString(6);
+						correctanswer = rs.getInt(7);
+						
+						System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (Couleur.BLEU.equals(case1.couleur)) {
+			try {
+				Connection conn = null;
+				Driver derbyEmbeddedDriver = new EmbeddedDriver();
+		         DriverManager.registerDriver(derbyEmbeddedDriver);
+		         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+		         conn.setAutoCommit(false);
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery(
+						"select * from questions where category like 'Divertissement' order by random() fetch first row only");
+				
+				while (rs.next()) {
+					try {
+						question = rs.getString(2);
+						answer1 = rs.getString(3);
+						answer2 = rs.getString(4);
+						answer3 = rs.getString(5);
+						category = rs.getString(6);
+						correctanswer = rs.getInt(7);
+						
+						//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if (Couleur.VIOLET.equals(case1.couleur)) {
+			try {
+				Connection conn = null;
+				Driver derbyEmbeddedDriver = new EmbeddedDriver();
+		         DriverManager.registerDriver(derbyEmbeddedDriver);
+		         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+		         conn.setAutoCommit(false);
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery(
+						"select * from questions where category like 'Sport' order by random() fetch first row only");
+				while (rs.next()) {
+					try {
+						question = rs.getString(2);
+						answer1 = rs.getString(3);
+						answer2 = rs.getString(4);
+						answer3 = rs.getString(5);
+						category = rs.getString(6);
+						correctanswer = rs.getInt(7);
+						
+						//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			else if (Couleur.ORANGE.equals(case1.couleur)) {
+				try {
+					Connection conn = null;
+					Driver derbyEmbeddedDriver = new EmbeddedDriver();
+			         DriverManager.registerDriver(derbyEmbeddedDriver);
+			         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+			         conn.setAutoCommit(false);
+					stmt = conn.createStatement();
+					rs = stmt.executeQuery(
+							"select * from questions where category like 'Voyage' order by random() fetch first row only");
+					while (rs.next()) {
+						try {
+							question = rs.getString(2);
+							answer1 = rs.getString(3);
+							answer2 = rs.getString(4);
+							answer3 = rs.getString(5);
+							category = rs.getString(6);
+							correctanswer = rs.getInt(7);
+							
+							//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+				else if (Couleur.JAUNE.equals(case1.couleur)) {
+					try {
+						Connection conn = null;
+						Driver derbyEmbeddedDriver = new EmbeddedDriver();
+				         DriverManager.registerDriver(derbyEmbeddedDriver);
+				         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+				         conn.setAutoCommit(false);
+						stmt = conn.createStatement();
+						rs = stmt.executeQuery(
+								"select * from questions where category like 'Musique' order by random() fetch first row only");
+						while (rs.next()) {
+							try {
+								question = rs.getString(2);
+								answer1 = rs.getString(3);
+								answer2 = rs.getString(4);
+								answer3 = rs.getString(5);
+								category = rs.getString(6);
+								correctanswer = rs.getInt(7);
+								
+								//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+							} catch (SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+					else if (Couleur.VERTE.equals(case1.couleur)) {
+						try {
+							Connection conn = null;
+							Driver derbyEmbeddedDriver = new EmbeddedDriver();
+					         DriverManager.registerDriver(derbyEmbeddedDriver);
+					         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
+					         conn.setAutoCommit(false);
+							stmt = conn.createStatement();
+							rs = stmt.executeQuery(
+									"select * from questions where category like 'Informatique' order by random() fetch first row only");
+							while (rs.next()) {
+								try {
+									question = rs.getString(2);
+									answer1 = rs.getString(3);
+									answer2 = rs.getString(4);
+									answer3 = rs.getString(5);
+									category = rs.getString(6);
+									correctanswer = rs.getInt(7);
+									
+									//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
+								} catch (SQLException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			
+		}
+		
+	}
+		
+
+	public Question(Couleur couleur) {
+		
+
+	
+		String table = couleur.getTheme().getCategoryName();
+
 		try {
 			Connection conn = null;
 			Driver derbyEmbeddedDriver = new EmbeddedDriver();
@@ -43,24 +243,20 @@ public class Question {
 	         conn = DriverManager.getConnection("jdbc:derby:database;create=true");
 	         conn.setAutoCommit(false);
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(
-					"select * from questions where category like 'Informatique' order by random() fetch first row only");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
+			String sql = "select * from questions where category like '" + table + "' order by random() fetch first row only";
+			
+			rs = stmt.executeQuery(sql);
+			
 			while (rs.next()) {
 				try {
 					question = rs.getString(2);
 					answer1 = rs.getString(3);
 					answer2 = rs.getString(4);
 					answer3 = rs.getString(5);
-				//	category = rs.getString(6);
+					category = rs.getString(6);
 					correctanswer = rs.getInt(7);
 					
-			//		System.out.printf(" %s %s %s %s  \n", question, answer1,
-				//			answer2, answer3);
+					//System.out.printf(" %s %s %s %s  \n", question, answer1, answer2, answer3);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

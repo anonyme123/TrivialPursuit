@@ -9,11 +9,23 @@
 package model;
 
 public enum Categorie {
-	INFORMATIQUE,
-	LYONBYNIGHT,
-	DIVERTISSEMENT,
-	SPORT,
-	VOYAGE,
-	MUSIQUE,
-	BONUS;
+	
+	//renomme en ("") pour conformité avec BDD
+	INFORMATIQUE("Informatique"),
+	LYONBYNIGHT("LyonByNight"),
+	DIVERTISSEMENT("Divertissement"),
+	SPORT("Sport"),
+	VOYAGE("Voyage"),
+	MUSIQUE("Musique"),
+	BONUS("Bonus");
+	
+	private String categoryName;
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+	
+	Categorie(String categoryName) {
+		this.categoryName = categoryName;
+	}
 }
