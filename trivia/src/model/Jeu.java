@@ -170,7 +170,7 @@ public class Jeu {
 			coord.y=0;
 			coord.x=((nbreCase-7*6)-1);
 		}
-		return coord;
+		return coord;//BLAblab
 	}
 
 }
