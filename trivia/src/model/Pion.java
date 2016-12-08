@@ -30,7 +30,7 @@ public class Pion {
 	}
 	
 	
-	public boolean isMoveOk2(int xFinal, int yFinal, De de) {
+	public boolean isMoveOk(int xFinal, int yFinal, De de) {
 		Map<Coord,Set<Coord>> casesNonParcourues = new HashMap<>(modele);	//toutes les cases du jeu non parcourues
 		Set<Coord> coordoneesACetteEtape = new HashSet<>(); 
 		coordoneesACetteEtape.add(this.coord);	//coordonnées déjà passées et actuelles
