@@ -148,5 +148,62 @@ public class Jeu {
 		return poseQuestion(new Coord(i,j));
 	}
 
+
+
+
+
+	public static Coord conversion(int nbreCase){
+		Coord coord=new Coord(0,0);
+		
+		if(nbreCase<=7)
+		{
+			//1er ligne 
+			coord.y=6;
+			coord.x=(nbreCase-1);
+		}
+		
+		if(nbreCase>7&&nbreCase<=14)
+		{
+			//2eme ligne 
+			coord.y=5;
+			coord.x=((nbreCase-7)-1);
+		}
+		
+		if(nbreCase>14&&nbreCase<=21)
+		{
+			//3eme ligne 
+			coord.y=4;
+			coord.x=((nbreCase-7*2)-1);
+		}
+		
+		if(nbreCase>21&&nbreCase<=28)
+		{
+			//4eme ligne 
+			coord.y=3;
+			coord.x=((nbreCase-7*3)-1);
+		}
+		
+		if(nbreCase>28&&nbreCase<=35)
+		{
+			//5eme ligne 
+			coord.y=2;
+			coord.x=((nbreCase-7*4)-1);
+		}
+		
+		if(nbreCase>35&&nbreCase<=42)
+		{
+			//6eme ligne 
+			coord.y=1;
+			coord.x=((nbreCase-7*5)-1);
+		}
+		
+		if(nbreCase>42&&nbreCase<=49)
+		{
+			//7eme ligne 
+			coord.y=0;
+			coord.x=((nbreCase-7*6)-1);
+		}
+		return coord;//BLAblab
+	}
 }
 
