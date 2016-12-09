@@ -75,6 +75,7 @@ public class Joueur {
 		
 	}
 	
+	// Méthode à appeller quand un joueur veut répondre à une question qui n'est pas camembert
 	public void repondreQuestion(Question q, int i)
 	{
 		if(i==q.getCorrectanswer()){
@@ -84,6 +85,8 @@ public class Joueur {
 			System.out.println("Malheureusement c'est faux ...");
 		}
 	}
+	
+	// Méthode à appeller quand un joueur veut répondre à une question qui est camembert
 	public void repondreQuestionCam(Question q, int i){
 		if(i==q.getCorrectanswer()){
 			System.out.println("Bravo vous avez répondu juste !");
@@ -94,6 +97,8 @@ public class Joueur {
 		}
 	}
 	
+	//Pose question avec une case en paramètre, à mon sens on ne l'utilisera pas, on
+	//utilisera poseQuestion qui est dans jeu et qui passe les coordonnées de la case en param
 	public Question poseQuestion(AbstractCase case1){
 		Question question = new Question(case1);
 		return question;

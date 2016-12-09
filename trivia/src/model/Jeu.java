@@ -62,7 +62,8 @@ public class Jeu {
 			joueurActif =3;
 		else if (joueurActif)*/
 
-	
+	//Affiche le vainqueur lorsque qu'un joueur a 6 camemeberts
+	// A appeler a chaque fois qu'un joueur répond à une question
 	public String afficheVainqueur()
 	{
 		int camembertRestants = 6-joueurActif.getNb_camembert();
@@ -132,6 +133,7 @@ public class Jeu {
 		this.joueurActif = joueurActif;
 	}
 	
+	//Pose une question en fonction des coordonnées
 	public Question poseQuestion(Coord coord){
 		Question question = null;
 		AbstractCase laCase = mapCases.get(coord);
@@ -142,7 +144,7 @@ public class Jeu {
 		
 		return question;
 }
-
+	// A ne surtout pas supprimer c'est grâce à ça que celle du dessus fonctionne, laisser les deux !
 	public Question poseQuestion(int i, int j) {
 	
 		return poseQuestion(new Coord(i,j));

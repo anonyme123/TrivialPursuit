@@ -116,7 +116,7 @@ public class IHM extends JFrame {
 		btnJouer.setBounds(249, 516, 84, 25);
 		btnJouer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			/////// remplissage du jpanel gameboard ///////
+			/////// remplissage du jpanel gameboard, a déplacer dans une nouvelle classe parce que c'est moche!!!! Si vous avez le temps  ///////
 				
 				for (int i = 1; i <= 63; i++) {
 					JPanel square = new JPanel( new BorderLayout() );
@@ -163,6 +163,7 @@ public class IHM extends JFrame {
 					    square.add(label);
 					}
 					
+					//Parcours la liste de joueurs à l'envers pour afficher les images des pions
 					Collections.reverse(Game.getListeJoueurs());
 					for(Joueur j: Game.getListeJoueurs()) {
 						if(i == 25) {
@@ -174,6 +175,7 @@ public class IHM extends JFrame {
 						    
 						}
 				
+						// Affiche les pions en dessous du plateau + le texte pour savoir le nb camemeberts
 					if (i==50){
 						
 						ImageIcon imageIcon = new ImageIcon("ressources/Rouge.png");
@@ -255,6 +257,8 @@ public class IHM extends JFrame {
 					}
 				
 				}
+					
+					//Bouton Lancé Dé
 					if(i==63){
 					JButton boutonDe = new JButton("Lancer le Dé");
 					boutonDe.setBounds(300, 47, 238, 300);
@@ -266,6 +270,8 @@ public class IHM extends JFrame {
 					square.add(boutonDe);
 					}
 					
+					//JtextArea se met à jours a chaque fois qu'on relance le dé, ce
+					//Jtextarea est déclaré au début de la classe
 					if(i==56){
 					    txtResultatDe = new JTextArea();
 						//txtResultatDe.append();

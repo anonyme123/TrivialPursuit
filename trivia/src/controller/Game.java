@@ -105,12 +105,14 @@ public class Game {
 	
 	}
 	
-	
+	//Lance le De
 	public static int De(){
 		 System.out.println(jeu.getJoueurActif().lancerDe());
 		return jeu.getJoueurActif().lancerDe();
 		
 	}
+	
+	//Il faut les créer avant elles sont crées dans la création des joueurs, peut être à supprimer je pense
 	private void creationCases() {
 		
 	}
