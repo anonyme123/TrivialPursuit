@@ -51,7 +51,7 @@ public class Main {
 		System.out.println(d1.toString());
         Pion p2 = new Pion("Bleu", 1, new Coord(1, 6));
 		System.out.println(p2.toString());
-        System.out.println("1"+p2.isMoveOk(0, 1, d1));
+       /* System.out.println("1"+p2.isMoveOk(0, 1, d1));
         System.out.println("2"+p2.isMoveOk(0, 2, d1));
         System.out.println("3"+p2.isMoveOk(0, 3, d1));
         System.out.println("4"+p2.isMoveOk(0, 4, d1));
@@ -66,7 +66,7 @@ public class Main {
         System.out.println("13"+p2.isMoveOk(6, 5, d1));
         System.out.println("13"+p2.isMoveOk(6, 4, d1));
         System.out.println("14"+p2.isMoveOk(6, 2, d1));
-        
+        */
        /* 
         Pion p3 = new Pion("Bleu", 1, new Coord(3, 0));
     	System.out.println(p3.toString());
@@ -88,7 +88,7 @@ public class Main {
         
         Pion p7 = new Pion("Bleu", 1, new Coord(5, 6));
     	System.out.println(p7.toString());
-        System.out.println(p7.isMoveOk(6, 2, d1));
+  //      System.out.println(p7.isMoveOk(6, 2, d1));
         
      
 		//-----DEBUT CREATION CASES-----//

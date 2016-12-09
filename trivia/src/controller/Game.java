@@ -20,7 +20,7 @@ import model.Jeu;
 
 public class Game {
 
-	private Jeu jeu;
+	private static Jeu jeu;
 	private De de;
 	
 	
@@ -39,6 +39,44 @@ public class Game {
 		if(!joueur1.trim().isEmpty() && !joueur1.equals("Joueur 1")) {
 			Joueur j1 = new Joueur(joueur1,1,new Pion("Bleu",1,new Coord(3,3)));
 			listeJoueurs.add(j1);
+			// TODO Auto-generated method stub
+			
+			//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
+			 int[][] in = { 
+		          		{0,1,1},{0,2,3},
+		          		{1,0,2},{1,3,2},{1,6,2},
+		          		{2,0,5},{2,3,2},{2,6,0},
+		          		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
+		          		{4,0,1},{4,3,4},{4,6,3},
+		          		{5,0,0},{5,3,5},{5,6,5},
+		          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
+		          };
+			//Affichage longueur du tableau
+			//System.out.println(in.length); 
+		          
+		        
+		     //-----Creation des CASES NORMALES-----//
+			 Map<Coord,AbstractCase> cases = new HashMap<>();
+		     	for (int x = 0 ; x <= 23 ; x++){
+		          	cases.put(
+		          			new Coord(in[x][0], in[x][1]), 
+		          			new CaseNormale(Couleur.getCouleur(in[x][2]),in[x][0],in[x][1])); //couleur,x,y
+		          }
+		     	
+		     //-----Creation CASES CAMEMBERT + BONUS-----//
+		      cases.put(new Coord(0,0), new CaseCam(Couleur.ROUGE, 0, 0)); 
+		      cases.put(new Coord(0,3), new CaseCam(Couleur.BLEU, 0, 3));
+		      cases.put(new Coord(0,6), new CaseCam(Couleur.JAUNE, 0, 6));
+		      cases.put(new Coord(6,0), new CaseCam(Couleur.ORANGE, 6, 0));
+		      cases.put(new Coord(6,3), new CaseCam(Couleur.VIOLET, 6, 3));
+		      cases.put(new Coord(6,6), new CaseCam(Couleur.VERTE, 6, 6));
+		      cases.put(new Coord(3,3), new CaseBonus(Couleur.NOIR, 3, 3)); //CASE BONUS
+		      
+		      System.out.println(" \n Affichage de toutes les cases : \n");
+			 
+			//----- FIN CREATION CASES -----//
+		  	//-----Création du Jeu-----//
+			jeu = new Jeu(4,4,3,cases,6,listeJoueurs,j1);
 		}
 		if(!joueur2.trim().isEmpty() && !joueur2.equals("Joueur 2")) {
 			Joueur j2 = new Joueur(joueur2,2,new Pion("Rouge",1,new Coord(3,3)));
@@ -61,48 +99,20 @@ public class Game {
 			listeJoueurs.add(j6);
 		}
 
-		//System.out.println(listeJoueurs);
-		//-----Création du Jeu-----//
-		//jeu = new Jeu(4,4,3,listeCases,6,listeJoueurs,j1);
+		System.out.println(listeJoueurs);
+		
+		
+	
 	}
 	
-	private void creationCases() {
-		// TODO Auto-generated method stub
+	
+	public static int De(){
+		return jeu.getJoueurActif().lancerDe();
 		
-		//Tableau des coordonnees de toutes les cases sauf camemberts et bonus // A REVERIFIER
-		 int[][] in = { 
-	          		{0,1,1},{0,2,3},
-	          		{1,0,2},{1,3,2},{1,6,2},
-	          		{2,0,5},{2,3,2},{2,6,0},
-	          		{3,0,3},{3,1,4},{3,2,5},{3,4,0},{3,5,2},{3,6,1},
-	          		{4,0,1},{4,3,4},{4,6,3},
-	          		{5,0,0},{5,3,5},{5,6,5},
-	          		{6,1,4},{6,2,5},{6,4,1},{6,5,0}	
-	          };
-		//Affichage longueur du tableau
-		//System.out.println(in.length); 
-	          
-	        
-	     //-----Creation des CASES NORMALES-----//
-		 Map<Coord,AbstractCase> cases = new HashMap<>();
-	     	for (int x = 0 ; x <= 23 ; x++){
-	          	cases.put(
-	          			new Coord(in[x][0], in[x][1]), 
-	          			new CaseNormale(Couleur.getCouleur(in[x][2]),in[x][0],in[x][1])); //couleur,x,y
-	          }
-	     	
-	     //-----Creation CASES CAMEMBERT + BONUS-----//
-	      cases.put(new Coord(0,0), new CaseCam(Couleur.ROUGE, 0, 0)); 
-	      cases.put(new Coord(0,3), new CaseCam(Couleur.BLEU, 0, 3));
-	      cases.put(new Coord(0,6), new CaseCam(Couleur.JAUNE, 0, 6));
-	      cases.put(new Coord(6,0), new CaseCam(Couleur.ORANGE, 6, 0));
-	      cases.put(new Coord(6,3), new CaseCam(Couleur.VIOLET, 6, 3));
-	      cases.put(new Coord(6,6), new CaseCam(Couleur.VERTE, 6, 6));
-	      cases.put(new Coord(3,3), new CaseBonus(Couleur.NOIR, 3, 3)); //CASE BONUS
-	      
-	      System.out.println(" \n Affichage de toutes les cases : \n");
-		 
-		//----- FIN CREATION CASES -----//
+		
+	}
+	private void creationCases() {
+		
 	}
 	
 	public void init(){ 

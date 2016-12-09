@@ -21,7 +21,7 @@ public class IHM extends JFrame {
 
     public IHM() {
         setTitle("TrivialPursuit");
-        setSize(600, 600);
+        setSize(700, 725);
         setResizable(false);
         try {
 			setIconImage(ImageIO.read(new File("ressources/appicon.png")));
@@ -37,7 +37,7 @@ public class IHM extends JFrame {
         startscreen.setLayout(null);
         startscreen.setBackground(Color.white);
         rules.setLayout(null);
-        gameboard.setLayout(new GridLayout(7, 7));
+        gameboard.setLayout(new GridLayout(9, 7));
 
         /////// remplissage du jpanel startscreen /////////////////
         JLabel lblTitle = new JLabel("Trivial Pursuit");
@@ -110,7 +110,7 @@ public class IHM extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			/////// remplissage du jpanel gameboard ///////
 				
-				for (int i = 1; i <= 49; i++) {
+				for (int i = 1; i <= 63; i++) {
 					JPanel square = new JPanel( new BorderLayout() );
 					gameboard.add( square );
 					
@@ -158,13 +158,67 @@ public class IHM extends JFrame {
 					Collections.reverse(Game.getListeJoueurs());
 					for(Joueur j: Game.getListeJoueurs()) {
 						if(i == 25) {
-							System.out.println(j.getPion().getCouleur());
+						//	System.out.println(j.getPion().getCouleur());
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						    
+						    
+						}
+					for (Joueur j2 :Game.getListeJoueurs()){	
+						if (i==50){
+							
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+						if (i==52){
+							
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+						if (i==54){
+							
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+						if (i==57){
+							
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+						if (i==59){
+							
+							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
+						    JLabel label = new JLabel(imageIcon);
+						    square.add(label);
+						}
+						if (i==61){
+							
 							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
 						    JLabel label = new JLabel(imageIcon);
 						    square.add(label);
 						}
 					}
+					}
+					if(i==63){
+					JButton boutonDe = new JButton("Lancer le Dé");
+					boutonDe.setBounds(300, 47, 238, 300);
+					boutonDe.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							Game.De();
+						}});
+					square.add(boutonDe);
+					}
 					
+					if(i==56){
+						JTextArea area = new JTextArea();
+						area.append("Vous avez \n fais :\n ");
+						square.add(area);
+					}
 				}	
 		        ///////fin du remplissage du jpanel gameboard /////////
                 cardLayout.show(cardPanel, "3");
