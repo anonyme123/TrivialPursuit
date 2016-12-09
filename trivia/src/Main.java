@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import controller.Game;
 import model.*;
 import view.*;
 
@@ -150,8 +151,11 @@ public class Main {
 			        System.out.println(jeu.afficheVainqueur());*/
 			        System.out.println(j1);//
 			        
-			        Question q2 = jeu.poseQuestion(6, 6);
-			        System.out.println(q2.toString());
+			      //  Question q2 = jeu.poseQuestion(6, 6);
+			       // System.out.println(q2.toString());
+			        
+			        System.out.println(jeu.getJoueurActif().lancerDe());
+			        
 		
 			      
 	}

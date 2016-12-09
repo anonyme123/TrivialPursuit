@@ -76,7 +76,7 @@ public class Game {
 			 
 			//----- FIN CREATION CASES -----//
 		  	//-----Création du Jeu-----//
-			jeu = new Jeu(4,4,3,cases,6,listeJoueurs,j1);
+			 jeu = new Jeu(4,4,3,cases,6,listeJoueurs,j1);
 		}
 		if(!joueur2.trim().isEmpty() && !joueur2.equals("Joueur 2")) {
 			Joueur j2 = new Joueur(joueur2,2,new Pion("Rouge",1,new Coord(3,3)));
@@ -107,8 +107,8 @@ public class Game {
 	
 	
 	public static int De(){
+		 System.out.println(jeu.getJoueurActif().lancerDe());
 		return jeu.getJoueurActif().lancerDe();
-		
 		
 	}
 	private void creationCases() {

@@ -18,8 +18,16 @@ public class IHM extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel cardPanel, startscreen, rules, gameboard;
     private CardLayout cardLayout = new CardLayout();
+    
+    /**
+     * La zone d'affichagedu résultat du dé
+     */
+    JTextArea txtResultatDe;
+    public void setTexteResultatDe(int resultatDe) {
+		this.txtResultatDe.setText("Vous avez \n fait :\n " + resultatDe);
+	}
 
-    public IHM() {
+	public IHM() {
         setTitle("TrivialPursuit");
         setSize(700, 725);
         setResizable(false);
@@ -165,59 +173,103 @@ public class IHM extends JFrame {
 						    
 						    
 						}
-					for (Joueur j2 :Game.getListeJoueurs()){	
-						if (i==50){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
-						if (i==52){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
-						if (i==54){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
-						if (i==57){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
-						if (i==59){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
-						if (i==61){
-							
-							ImageIcon imageIcon = new ImageIcon("ressources/"+j.getPion().getCouleur()+".png");
-						    JLabel label = new JLabel(imageIcon);
-						    square.add(label);
-						}
+				
+					if (i==50){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Rouge.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
 					}
+					if(i==51){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.RED);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
 					}
+					if (i==52){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Orange.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if(i==53){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.ORANGE);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
+					}
+					
+					if (i==54){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Jaune.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if(i==55){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.YELLOW);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
+					}
+					if (i==57){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Bleu.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if(i==58){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.BLUE);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
+					}
+					if (i==59){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Vert.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if(i==60){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.GREEN);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
+					}
+					if (i==61){
+						
+						ImageIcon imageIcon = new ImageIcon("ressources/Violet.png");
+					    JLabel label = new JLabel(imageIcon);
+					    square.add(label);
+					}
+					if(i==62){
+						JTextArea area = new JTextArea();
+						area.setBackground(Color.PINK);
+						area.setFont(new Font("ComicSansMS", Font.ITALIC,14));
+						area.append("Vous avez\n"+ j.getNb_camembert()+ " Camemberts");
+						square.add(area);
+					}
+				
+				}
 					if(i==63){
 					JButton boutonDe = new JButton("Lancer le Dé");
 					boutonDe.setBounds(300, 47, 238, 300);
 					boutonDe.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
-							Game.De();
+							int resultatDe = Game.De();
+							setTexteResultatDe(resultatDe);
 						}});
 					square.add(boutonDe);
 					}
 					
 					if(i==56){
-						JTextArea area = new JTextArea();
-						area.append("Vous avez \n fais :\n ");
-						square.add(area);
+					    txtResultatDe = new JTextArea();
+						//txtResultatDe.append();
+						square.add(txtResultatDe);
 					}
 				}	
 		        ///////fin du remplissage du jpanel gameboard /////////
