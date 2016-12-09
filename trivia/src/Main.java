@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import controller.Game;
 import model.*;
 import view.*;
 
@@ -45,11 +46,13 @@ public class Main {
 		p1.seDeplacer(6, 3);
 		System.out.println(p1.toString());
 		
-		
+		Game game = new Game();
+		game.init();
 		De d1 = new De();
 		d1.lancer();
 		System.out.println(d1.toString());
         Pion p2 = new Pion("Bleu", 1, new Coord(1, 6));
+        p2.setModele(game.getModele()); // --> pour envoyer la map à la classe Pion
 		System.out.println(p2.toString());
         System.out.println("1"+p2.isMoveOk(0, 1, d1));
         System.out.println("2"+p2.isMoveOk(0, 2, d1));

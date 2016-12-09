@@ -83,10 +83,10 @@ public class Joueur {
 		}
 	}
 	
-	public Question poseQuestion(AbstractCase case1){
+	/*public Question poseQuestion(AbstractCase case1){
 		Question question = new Question(case1);
 		return question;
-	}
+	}*/
 
 	@Override
 	public String toString() {

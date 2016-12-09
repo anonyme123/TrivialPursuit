@@ -6,20 +6,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import model.AbstractCase;
-import model.CaseBonus;
-import model.CaseCam;
-import model.CaseNormale;
 import model.Coord;
-import model.Couleur;
-import model.De;
 import model.Joueur;
 import model.Pion;
-import model.Jeu;
 
 public class Game {
 	
+	private Map<Coord,Set<Coord>> modele;
+	public Map<Coord, Set<Coord>> getModele() {
+		return modele;
+	}
+
 	//-----Création de la liste de joueur-----//
 	private static List<Joueur> listeJoueurs = new ArrayList<Joueur>();
 	
@@ -63,177 +60,178 @@ public class Game {
 	public void init(){ 
 		 //------ DECLARATION DES VOISINS DE CHAQUE CASE ------ //
 		 Set <Coord> setMod = new HashSet<>();
-		 Map<Coord,Set<Coord>> modele = new HashMap<>();
+		 modele = new HashMap<>();
 		 setMod.add(new Coord(0, 1));
 		 setMod.add(new Coord(1, 0));
 		 modele.put(new Coord(0,0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 0));
 		 setMod.add(new Coord(0, 2));
 		 modele.put(new Coord(0,1), setMod);
-		 setMod.clear();
-				 						
+		 
+		 setMod = new HashSet<>();	
 		 setMod.add(new Coord(0, 1));
 		 setMod.add(new Coord(0, 3));
 		 modele.put(new Coord(0,2), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 2));
 		 setMod.add(new Coord(0, 4));
 		 setMod.add(new Coord(1, 3));
 		 modele.put(new Coord(0,3), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 3));
 		 setMod.add(new Coord(0, 5));
 		 modele.put(new Coord(0,4), setMod);
-		 setMod.clear();
-		 
+
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 4));
 		 setMod.add(new Coord(0, 6));
 		 modele.put(new Coord(0,5), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 5));
 		 setMod.add(new Coord(1, 6));
 		 modele.put(new Coord(0,6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 6));
 		 setMod.add(new Coord(2, 6));
 		 modele.put(new Coord(1,6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(1, 6));
 		 setMod.add(new Coord(3, 6));
 		 modele.put(new Coord(2,6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(2, 6));
 		 setMod.add(new Coord(4, 6));
 		 setMod.add(new Coord(3, 5));
 		 modele.put(new Coord(3,6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 6));
 		 setMod.add(new Coord(5, 6));
 		 modele.put(new Coord(4, 6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(4, 6));
 		 setMod.add(new Coord(6, 6));
 		 modele.put(new Coord(5,6), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(5, 6));
 		 setMod.add(new Coord(6, 5));
 		 modele.put(new Coord(6, 6), setMod);
-		 setMod.clear();
-				 	
+		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 6));
 		 setMod.add(new Coord(6, 4));
 		 modele.put(new Coord(6, 5), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 5));
 		 setMod.add(new Coord(6, 3));
 		 modele.put(new Coord(6, 4), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 4));
 		 setMod.add(new Coord(5, 3));
 		 setMod.add(new Coord(6, 2));
 		 modele.put(new Coord(6, 3), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 3));
 		 setMod.add(new Coord(6, 1));
 		 modele.put(new Coord(6,2), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 2));
 		 setMod.add(new Coord(6, 0));
 		 modele.put(new Coord(6, 1), setMod);
-		 setMod.clear();
-				 	
+		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 1));
 		 setMod.add(new Coord(5, 0));
 		 modele.put(new Coord(6, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(6, 0));
 		 setMod.add(new Coord(4, 0));
 		 modele.put(new Coord(5, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 0));
 		 setMod.add(new Coord(5, 0));
 		 modele.put(new Coord(4, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(2, 0));
 		 setMod.add(new Coord(4, 0));
 		 setMod.add(new Coord(3, 1));
 		 modele.put(new Coord(3, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(1, 0));
 		 setMod.add(new Coord(3, 0));
 		 modele.put(new Coord(2, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 0));
 		 setMod.add(new Coord(2, 0));
 		 modele.put(new Coord(1, 0), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(0, 3));
 		 setMod.add(new Coord(2, 3));
 		 modele.put(new Coord(1, 3), setMod);
-		 setMod.clear();
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(1, 3));
 		 setMod.add(new Coord(3, 3));
 		 modele.put(new Coord(2, 3), setMod);
-		 setMod.clear();	
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 3));
 		 setMod.add(new Coord(5, 3));
 		 modele.put(new Coord(4, 3), setMod);
-		 setMod.clear();	 
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(4, 3));
 		 setMod.add(new Coord(6, 3));
 		 modele.put(new Coord(5, 3), setMod);
-		 setMod.clear();	
-		
+		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 6));
 		 setMod.add(new Coord(3, 4));
 		 modele.put(new Coord(3, 5), setMod);
-		 setMod.clear(); 
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 3));
 		 setMod.add(new Coord(3, 5));
 		 modele.put(new Coord(3, 4), setMod);
-		 setMod.clear(); 
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 1));
 		 setMod.add(new Coord(3, 3));
 		 modele.put(new Coord(3, 2), setMod);
-		 setMod.clear(); 
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 0));
 		 setMod.add(new Coord(3, 2));
 		 modele.put(new Coord(3, 1), setMod);
-		 setMod.clear(); 
 		 
+		 setMod = new HashSet<>();
 		 setMod.add(new Coord(3, 4));
 		 setMod.add(new Coord(3, 2));
 		 setMod.add(new Coord(2, 3));
 		 setMod.add(new Coord(4, 3));
 		 modele.put(new Coord(3, 3), setMod);
-		 setMod.clear();
+
+		 System.out.println("Map des voisines : " + modele.entrySet());
 		 
 		 Pion monPion = new Pion("ROUGE", 1, new Coord(0,4));
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
