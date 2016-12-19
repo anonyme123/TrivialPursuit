@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import controller.Game;
 import model.*;
 import view.*;
 
@@ -32,6 +34,25 @@ public class Main {
                 frame.setVisible(true);
             }
         });
+		
+
+        /*Game game;
+        JFrame frame;
+        Dimension dim;
+
+        dim = new Dimension(700, 700);
+
+        game = new Game();
+    
+
+        frame = new IHM2("Jeu de trivial pursuit", game, dim);
+        //chessGame.addObserver((Observer) frame);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(dim);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);*/
         
         //INITIALISATION DE LA DATABASE
         Database e = new Database();

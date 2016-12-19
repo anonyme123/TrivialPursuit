@@ -26,6 +26,14 @@ public class Game {
 	private De de;
 	
 	
+	public De getDe() {
+		return de;
+	}
+
+	public void setDe(De de) {
+		this.de = de;
+	}
+
 	//-----Création de la liste de joueur-----//
 	private static List<Joueur> listeJoueurs = new ArrayList<Joueur>();
 	
@@ -298,8 +306,9 @@ public class Game {
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
 	}
 
-	public static void move(Coord coordDep, Coord coordArr) {
-		// TODO Auto-generated method stub
+	public void move(Coord coordArr) {
+		Pion pion = jeu.afficheJoueurActif().getPion();
+		pion.seDeplacer(coordArr.x, coordArr.y, this.getDe());
 		
 	}
 
