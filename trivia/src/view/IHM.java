@@ -299,7 +299,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 	public void mousePressed(MouseEvent e) {
         pion = null;
 
-        this.coordDep = new Coord(e.getX() * 7 / dim.width, e.getY() * 9 / dim.height);
+        this.coordDep = new Coord(e.getX() * 7 / 700, e.getY() * 9 / 725);
         Component c = gameboard.findComponentAt(e.getX(), e.getY());
         //if (chessGameControler.isPlayerOK(this.coordDep)) {
             if (c instanceof JPanel) {
@@ -330,7 +330,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         if (pion == null) {
             return;
         }
-        this.coordArr = new Coord(e.getX() * 7 / dim.width, e.getY() * 9 / dim.height);
+        this.coordArr = new Coord(e.getX() * 7 / 700, e.getY() * 9 / 725);
         Game.move(coordDep, coordArr);
         pion.setVisible(false);
     }
