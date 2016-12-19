@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
 import java.util.Set;
 
 import javax.swing.JLabel;
@@ -20,12 +21,17 @@ import model.Joueur;
 import model.Pion;
 import model.Jeu;
 
-public class Game {
+public class Game extends Observable {
 
-	private static Jeu jeu;
+	public static Jeu jeu;
 	private De de;
+	private int resultatDernierLancerDe;
 	
 	
+	public int getResultatDernierLancerDe() {
+		return resultatDernierLancerDe;
+	}
+
 	public De getDe() {
 		return de;
 	}
@@ -116,9 +122,11 @@ public class Game {
 	}
 	
 	//Lance le De
-	public static int De(){
-		 System.out.println(jeu.getJoueurActif().lancerDe());
-		return jeu.getJoueurActif().lancerDe();
+	public int De(){
+		resultatDernierLancerDe = jeu.getJoueurActif().lancerDe();
+		System.out.println(resultatDernierLancerDe);
+		// return jeu.getJoueurActif().lancerDe();
+		return resultatDernierLancerDe;
 		
 	}
 	
@@ -306,12 +314,20 @@ public class Game {
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
 	}
 
-	public void move(Coord coordArr) {
+	public boolean move(Coord coordArr) {
 		Pion pion = jeu.afficheJoueurActif().getPion();
-		pion.seDeplacer(coordArr.x, coordArr.y, this.getDe());
-		
+		System.out.println(pion);
+		// boolean result = pion.seDeplacer(coordArr.x, coordArr.y, this.getDe());
+		boolean result = pion.seDeplacer(coordArr.x, coordArr.y, this.resultatDernierLancerDe);
+		System.out.println(result);
+		if (result) {
+			this.setChanged();
+			this.notifyObservers();
+		}
+		return result;
 	}
 
+	
 		
 	/*public void lancerJeu(){
 		if (jeu !=  null) {

@@ -31,8 +31,16 @@ public class Pion {
 		this.coord = coord;
 	}
 
-	public boolean seDeplacer(int x, int y, De de) { // Fait se d�placer le pion
-		if (isMoveOk(x,y,de)==true){
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param resultatDe
+	 * @return vrai si le déplacement a été réalisé
+	 */
+	// public boolean seDeplacer(int x, int y, De de) { // Fait se d�placer le pion
+	public boolean seDeplacer(int x, int y, int resultatDe) { // Fait se d�placer le pion
+		if (isMoveOk(x,y,resultatDe)==true){
 			coord.x = x;
 			coord.y = y;
 			return true;
@@ -40,14 +48,16 @@ public class Pion {
 		return false;
 	}
 	
-	public boolean isMoveOk(int xFinal, int yFinal, De de) {
+	// public boolean isMoveOk(int xFinal, int yFinal, De de) {
+	public boolean isMoveOk(int xFinal, int yFinal, int resultatDe) {
 		Map<Coord,Set<Coord>> casesNonParcourues = new HashMap<>(modele);	//toutes les cases du jeu non parcourues
 		Set<Coord> coordoneesALEtapeActuelle = new HashSet<>(); // etape = etape du parcours de 0 à N cases (N=résultat dé)
 		
 		if (true)
 		System.out.println(
 				String.format("Vérification du déplacement de %s cases en partant de %s",
-						de.getNbAleatoire(),
+						// resultatDe.getNbAleatoire(),
+						resultatDe,
 						this.coord
 				)
 		);
@@ -56,7 +66,8 @@ public class Pion {
 		coordoneesALEtapeActuelle.add(this.coord);	// on part de l'étape zéro (case de départ)
 		
 		int etape=0;
-		for (etape=0; etape<de.getNbAleatoire();etape++){ 		// itération jusqu'à la fin du dé
+		// for (etape=0; etape<resultatDe.getNbAleatoire();etape++){ 		// itération jusqu'à la fin du dé
+		for (etape=0; etape<resultatDe;etape++){ 		// itération jusqu'à la fin du dé
 			if (DEBUG) System.out.println("Etape N°" + etape);
 			Set<Coord> etapesSuivante = new HashSet<Coord>();
 			for (Coord coordonneeDEtape : coordoneesALEtapeActuelle) {	//coordonnéeDEtape = voisins possibles

@@ -23,7 +23,7 @@ import controller.Game;
 
 public class IHM extends JFrame implements Observer, MouseListener, MouseMotionListener {
 	String jeu_trivia;
-	Game game;
+	private Game game;
 	Dimension dim;
 	Coord coordDep;
 	Coord coordArr;
@@ -45,8 +45,12 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		this.txtResultatDe.setText("Vous avez \n fait :\n " + resultatDe);
 	}
 
-	public IHM() {
+	public IHM(Dimension dim) {
+		game = new Game();
+		game.addObserver(this);
+		
         setTitle("TrivialPursuit");
+		this.dim = dim;
         setSize(700, 725);
         setResizable(false);
         try {
@@ -59,13 +63,23 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         cardPanel.setLayout(cardLayout);
         startscreen = new JPanel();
         rules = new JPanel();
-        gameboard = new JPanel();
-        gameboard.addMouseListener(this);
-        gameboard.addMouseMotionListener(this);
+        //gameboard = new JPanel();
+        //gameboard.addMouseListener(this);
+        //gameboard.addMouseMotionListener(this);
         startscreen.setLayout(null);
         startscreen.setBackground(Color.white);
         rules.setLayout(null);
+        //gameboard.setLayout(new GridLayout(9, 7));
+        
+        layeredPane = new JLayeredPane();
+        layeredPane.setPreferredSize(dim);
+        layeredPane.addMouseListener(this);
+        layeredPane.addMouseMotionListener(this);
+        gameboard = new JPanel();
+        layeredPane.add(gameboard, JLayeredPane.DEFAULT_LAYER);
         gameboard.setLayout(new GridLayout(9, 7));
+        gameboard.setPreferredSize(this.dim);
+        gameboard.setBounds(0, 0, this.dim.width, this.dim.height);
 
         /////// remplissage du jpanel startscreen /////////////////
         JLabel lblTitle = new JLabel("Trivial Pursuit");
@@ -149,27 +163,28 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         getContentPane().add(cardPanel, BorderLayout.CENTER);
         cardPanel.add(startscreen, "1");
         cardPanel.add(rules, "2");
-        cardPanel.add(gameboard, "3");
+        cardPanel.add(layeredPane, "3");
     }
 
 	public void mousePressed(MouseEvent e) {
         pion = null;
-
-        this.coordDep = new Coord(e.getX() * 7 / dim.width, e.getY() * 9 / dim.height);
-        Component c = triviaBoard.findComponentAt(e.getX(), e.getY());
-        //if (game.isPlayerOK(this.coordDep)) {
-            if (c instanceof JPanel) {
-                return;
-            }
-
-            Point parentLocation = c.getParent().getLocation();
+ 
+        this.coordDep = new Coord(e.getX() * 7 / dim.width, e.getY() * 9 / dim.height);       
+        Component c = gameboard.findComponentAt(e.getX(), e.getY());
+        
+        if (c instanceof JLabel) {
+        	Point parentLocation = c.getParent().getLocation();
             xAdjustment = parentLocation.x - e.getX();
             yAdjustment = parentLocation.y - e.getY();
             pion = (JLabel) c;
+            
+            // TODO mémoriser point d edépart (pour reset évntuel si !isMoveOk)
+            
             pion.setLocation(e.getX() + xAdjustment, e.getY() + yAdjustment);
             pion.setSize(pion.getWidth(), pion.getHeight());
             layeredPane.add(pion, JLayeredPane.DRAG_LAYER);
-       // }
+        }
+ 
     }
 
     //Move the piece around
@@ -184,12 +199,22 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
     //Drop the piece back onto the board
     public void mouseReleased(MouseEvent e) {
         if (pion == null) {
+        	System.out.println("pas de pion (sic)");
             return;
         }
         this.coordArr = new Coord(e.getX() * 7 / dim.width, e.getY() * 9 / dim.height);
-        game.move(coordArr);
-        pion.setVisible(false);
-
+        System.out.println(coordArr.x);
+        System.out.println(coordArr.y);
+        // FIXME 
+        boolean moveOk = game.move(coordArr);
+//       if (moveOk) {
+//        	// TODO le mettre au bon endroit (coordArr)
+//    	   
+//       } else {
+//    	   	// TODO le remettre aux cood de départ
+//       }
+    	   pion.setVisible(false);
+    	   
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -206,10 +231,12 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
     public void mouseExited(MouseEvent e) {
 
     }
-
+    
+       
 	@Override
 	public void update(Observable o, Object arg) {
-	/////// remplissage du jpanel gameboard, a déplacer dans une nouvelle classe parce que c'est moche!!!! Si vous avez le temps  ///////
+		gameboard.removeAll();
+		/////// remplissage du jpanel gameboard, a déplacer dans une nouvelle classe parce que c'est moche!!!! Si vous avez le temps  ///////
 		
 		for (int i = 1; i <= 63; i++) {
 			JPanel square = new JPanel( new BorderLayout() );
@@ -226,9 +253,11 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 			
 			/////// cases camemberts ///////
 			if (i==1){
-				ImageIcon imageIcon = new ImageIcon("ressources/musique.jpg");
-			    JLabel label = new JLabel(imageIcon);
+			    JLabel label = new JLabel(new ImageIcon("ressources/musique.jpg"));
 			    square.add(label);
+			    //TODO essayer qqch
+			    /*Image background = Toolkit.getDefaultToolkit().createImage("ressources/musique.jpg");
+			    square.drawImage(background, 0, 0, null);*/
 			}
 			if (i==7){
 				ImageIcon imageIcon = new ImageIcon("ressources/geek.jpg");
@@ -357,7 +386,8 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 			boutonDe.setBounds(300, 47, 238, 300);
 			boutonDe.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					int resultatDe = Game.De();
+					// int resultatDe = Game.De();
+					int resultatDe = Game.jeu.getJoueurActif().lancerDe();
 					setTexteResultatDe(resultatDe);
 				}});
 			square.add(boutonDe);
@@ -372,6 +402,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 			}
 		}	
         ///////fin du remplissage du jpanel gameboard /////////
-		
+		gameboard.validate();
+        gameboard.repaint();
 	}
 }
