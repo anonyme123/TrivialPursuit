@@ -297,7 +297,7 @@ public class Game {
 	}
 
 	public static void move(Pion pion, Coord coordArr) {
-		// TODO Auto-generated method 
+		// TODO Auto-generated meth
 		pion.seDeplacer(coordArr.x, coordArr.y, De());
 		
 	}

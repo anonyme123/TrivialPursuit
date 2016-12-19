@@ -320,7 +320,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         //}
 	}
 
-	//deplace le pion
+	//deplace le pion/
     public void mouseDragged(MouseEvent me) {
         if (pion == null) {
             return;

@@ -17,7 +17,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//LANCEMENT DE L'IHM/
+		//LANCEMENT DE L'IHM//
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException
