@@ -123,7 +123,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		});
 		startscreen.add(btnValider);
 
-	    /////// remplissage du jpanel rules /////////
+	    /////// remplissage du jpanel rules ////////
 		JLabel lblRglesDuJeu = new JLabel("R\u00E8gles du jeu");
 		lblRglesDuJeu.setBounds(181, 47, 238, 42);
 		lblRglesDuJeu.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
