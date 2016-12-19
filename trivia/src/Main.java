@@ -1,4 +1,3 @@
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import controller.Game;
 import model.*;
 import view.*;
 
@@ -29,8 +27,7 @@ public class Main {
 
             @Override
             public void run() {
-            	Dimension dim = new Dimension(700,725);
-                IHM frame = new IHM(dim);
+                IHM frame = new IHM();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }

@@ -298,14 +298,7 @@ public class Game {
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
 	}
 
-	public static void move(Coord coordDep, Coord coordArr) {
-		// TODO Auto-generated method stub
 		
-		
-	}
-
-	
-	
 	
 	
 	/*public void lancerJeu(){

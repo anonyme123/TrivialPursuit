@@ -138,17 +138,5 @@ public class Pion {
 				+ coord;
 	}
 
-	public void setLocation(int i, int j) {
-		// TODO Auto-generated method stub
-		this.coord.x = i;
-		this.coord.y = j;
-		
-	}
-
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		this.setVisible(b);
-		
-	}
-
+	
 }

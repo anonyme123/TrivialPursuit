@@ -17,7 +17,6 @@ import javax.swing.*;
 
 import model.Coord;
 import model.Joueur;
-import model.Pion;
 import controller.Game;
 
 public class IHM extends JFrame implements Observer, MouseListener, MouseMotionListener {
@@ -32,7 +31,6 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
     
     Coord coordDep;
     Coord coordArr;
-    Dimension dim;
     
     /**
      * La zone d'affichagedu résultat du dé
@@ -41,11 +39,11 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
     public void setTexteResultatDe(int resultatDe) {
 		this.txtResultatDe.setText("Vous avez \n fait :\n " + resultatDe);
 	}
-
-	public IHM(Dimension dim) {
-		this.dim = dim;
-        setTitle("TrivialPursuit");
-        //setSize(700, 725);
+	
+	public IHM() {
+		// TODO Auto-generated constructor stub
+		setTitle("TrivialPursuit");
+        setSize(700, 725);
         setResizable(false);
         try {
 			setIconImage(ImageIO.read(new File("ressources/appicon.png")));
@@ -55,24 +53,30 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
    
         cardPanel = new JPanel();
         cardPanel.setLayout(cardLayout);
+        
         startscreen = new JPanel();
         startscreen.setLayout(null);
         startscreen.setBackground(Color.white);
+        
         rules = new JPanel();
         rules.setLayout(null);
         
         layeredPane = new JLayeredPane();
-        getContentPane().add(layeredPane);
-        layeredPane.setPreferredSize(dim);
         layeredPane.addMouseListener(this);
         layeredPane.addMouseMotionListener(this);
         gameboard = new JPanel();
         layeredPane.add(gameboard, JLayeredPane.DEFAULT_LAYER);
         gameboard.setLayout(new GridLayout(9, 7));
-        gameboard.setPreferredSize(this.dim);
-        gameboard.setBounds(0, 0, this.dim.width, this.dim.height);
+        
+        getContentPane().add(cardPanel, BorderLayout.CENTER);
+        cardPanel.add(startscreen, "1");
+        cardPanel.add(rules, "2");
+        cardPanel.add(layeredPane, "3");
+	}
 
-        /////// remplissage du jpanel startscreen /////////////////
+	@Override
+	public void update(Observable o, Object arg) {
+		/////// remplissage du jpanel startscreen /////////////////
         JLabel lblTitle = new JLabel("Trivial Pursuit");
         lblTitle.setBounds(186, 40, 239, 42);
 		lblTitle.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
@@ -141,19 +145,11 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		btnJouer.setBounds(249, 516, 84, 25);
 		btnJouer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				fillGameBoard();	
 				cardLayout.show(cardPanel, "3");
 			}
 		});
 		rules.add(btnJouer);
-		
-        getContentPane().add(cardPanel, BorderLayout.CENTER);
-        cardPanel.add(startscreen, "1");
-        cardPanel.add(rules, "2");
-        cardPanel.add(gameboard, "3");
-    }
-	
-	public void fillGameBoard() {
+        
     	gameboard.removeAll();
     	//remplissage des cases avec les couleur et les catégories
     	int i;
@@ -363,9 +359,4 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
-	}
 }
