@@ -31,13 +31,13 @@ public class Pion {
 		this.coord = coord;
 	}
 
-	public boolean seDeplacer(int x, int y) { // Fait se d�placer le pion
-		if (coord.x == x && coord.y == y)
-			return false;
-		else
+	public boolean seDeplacer(int x, int y, De de) { // Fait se d�placer le pion
+		if (isMoveOk(x,y,de)==true){
 			coord.x = x;
-		coord.y = y;
-		return true;
+			coord.y = y;
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean isMoveOk(int xFinal, int yFinal, De de) {
