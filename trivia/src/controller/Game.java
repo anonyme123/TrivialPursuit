@@ -295,6 +295,12 @@ public class Game {
 		 Pion monPion = new Pion("ROUGE", 1, new Coord(0,4));
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
 	}
+
+	public static void move(Pion pion, Coord coordArr) {
+		// TODO Auto-generated method stub
+		pion.seDeplacer(coordArr.x, coordArr.y, De());
+		
+	}
 	
 	
 	

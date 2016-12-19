@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +29,8 @@ public class Main {
 
             @Override
             public void run() {
-                IHM frame = new IHM();
+            	Dimension dim = new Dimension(700,725);
+                IHM frame = new IHM(dim);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
