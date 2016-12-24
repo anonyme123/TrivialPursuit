@@ -49,11 +49,12 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		game = new Game();
 		game.addObserver(this);
 		
-        setTitle("TrivialPursuit");
-		this.dim = dim;
-        setSize(700, 725);
-        setResizable(false);
-        try {
+    setTitle("TrivialPursuit");
+    this.dim = dim;
+
+    setSize(700, 725);
+    setResizable(false);
+    try {
 			setIconImage(ImageIO.read(new File("ressources/appicon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -63,13 +64,9 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         cardPanel.setLayout(cardLayout);
         startscreen = new JPanel();
         rules = new JPanel();
-        //gameboard = new JPanel();
-        //gameboard.addMouseListener(this);
-        //gameboard.addMouseMotionListener(this);
         startscreen.setLayout(null);
         startscreen.setBackground(Color.white);
         rules.setLayout(null);
-        //gameboard.setLayout(new GridLayout(9, 7));
         
         layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(dim);
@@ -84,53 +81,53 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
         /////// remplissage du jpanel startscreen /////////////////
         JLabel lblTitle = new JLabel("Trivial Pursuit");
         lblTitle.setBounds(186, 40, 239, 42);
-		lblTitle.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
-		startscreen.add(lblTitle);
+		    lblTitle.setFont(new Font("Bradley Hand ITC", Font.PLAIN, 35));
+		    startscreen.add(lblTitle);
 		
-		JLabel picLabel = new JLabel(new ImageIcon("ressources/gameicon.jpg"));
-		picLabel.setLocation(186, 115);
-		picLabel.setSize(292, 283);
-		startscreen.add(picLabel);
+        JLabel picLabel = new JLabel(new ImageIcon("ressources/gameicon.jpg"));
+        picLabel.setLocation(186, 115);
+        picLabel.setSize(292, 283);
+        startscreen.add(picLabel);
+
+        final TextField joueur1 = new TextField();
+        joueur1.setBounds(53, 106, 69, 19);
+        joueur1.setText("Joueur 1");
+        startscreen.add(joueur1);
+
+        final TextField joueur2 = new TextField();
+        joueur2.setBounds(53, 141, 69, 19);
+        joueur2.setText("Joueur 2");
+        startscreen.add(joueur2);
 		
-		final TextField joueur1 = new TextField();
-		joueur1.setBounds(53, 106, 69, 19);
-		joueur1.setText("Joueur 1");
-		startscreen.add(joueur1);
-		
-		final TextField joueur2 = new TextField();
-		joueur2.setBounds(53, 141, 69, 19);
-		joueur2.setText("Joueur 2");
-		startscreen.add(joueur2);
-		
-		final TextField joueur3 = new TextField();
-		joueur3.setBounds(53, 179, 69, 19);
-		joueur3.setText("Joueur 3");
-		startscreen.add(joueur3);
-		
-		final TextField joueur4 = new TextField();
-		joueur4.setBounds(53, 214, 69, 19);
-		joueur4.setText("Joueur 4");
-		startscreen.add(joueur4);
-		
-		final TextField joueur5 = new TextField();
-		joueur5.setBounds(53, 252, 69, 19);
-		joueur5.setText("Joueur 5");
-		startscreen.add(joueur5);
-		
-		final TextField joueur6 = new TextField();
-		joueur6.setBounds(53, 291, 69, 19);
-		joueur6.setText("Joueur 6");
-		startscreen.add(joueur6);
-		
-		JButton btnValider = new JButton("Valider");
-		btnValider.setBounds(249, 466, 84, 25);
-		btnValider.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Game.initJoueurs(joueur1.getText(), joueur2.getText(), joueur3.getText(), joueur4.getText(), joueur5.getText(), joueur6.getText());
-				cardLayout.show(cardPanel, "2");
-            }
-		});
-		startscreen.add(btnValider);
+        final TextField joueur3 = new TextField();
+        joueur3.setBounds(53, 179, 69, 19);
+        joueur3.setText("Joueur 3");
+        startscreen.add(joueur3);
+
+        final TextField joueur4 = new TextField();
+        joueur4.setBounds(53, 214, 69, 19);
+        joueur4.setText("Joueur 4");
+        startscreen.add(joueur4);
+
+        final TextField joueur5 = new TextField();
+        joueur5.setBounds(53, 252, 69, 19);
+        joueur5.setText("Joueur 5");
+        startscreen.add(joueur5);
+
+        final TextField joueur6 = new TextField();
+        joueur6.setBounds(53, 291, 69, 19);
+        joueur6.setText("Joueur 6");
+        startscreen.add(joueur6);
+
+        JButton btnValider = new JButton("Valider");
+        btnValider.setBounds(249, 466, 84, 25);
+        btnValider.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+            Game.initJoueurs(joueur1.getText(), joueur2.getText(), joueur3.getText(), joueur4.getText(), joueur5.getText(), joueur6.getText());
+            cardLayout.show(cardPanel, "2");
+                }
+        });
+		    startscreen.add(btnValider);
 
 	    /////// remplissage du jpanel rules /////////
 		JLabel lblRglesDuJeu = new JLabel("R\u00E8gles du jeu");
@@ -150,6 +147,7 @@ public class IHM extends JFrame implements Observer, MouseListener, MouseMotionL
 		btnJouer.setBounds(249, 516, 84, 25);
 		btnJouer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				Object anchor = null;
 				//appel à update
 				update(null, anchor);

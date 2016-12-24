@@ -67,7 +67,7 @@ public class Jeu {
 				 s ="Nous avons un Vainqueur " + joueurActif;
 			}
 			else{
-				s="Vous n'avez pas encore gagné, plus que "+ camembertRestants+" camemberts :) \n";
+				s="Vous n'avez pas encore gagne, plus que "+ camembertRestants+" camemberts :) \n";
 			}
 		}
 		return s;
@@ -127,7 +127,8 @@ public class Jeu {
 		this.joueurActif = joueurActif;
 	}
 	
-	public Question poseQuestion(Coord coord){
+//Recupere la couleur de la Case pour renvoyer la bonne question
+public Question poseQuestion(Coord coord){
 		Question question = null;
 		AbstractCase laCase = mapCases.get(coord);
 		if (laCase != null) {
@@ -142,6 +143,21 @@ public class Jeu {
 	
 		return poseQuestion(new Coord(i,j));
 	}
+	
+	//Repond a la question et attribut un camembert si case CaseCamembert
+	public void repondreQuestion(Joueur joueurActif, Question q, Coord coord,int reponse){
+		AbstractCase laCase = mapCases.get(coord);
+		if(laCase.isCamembert==false)
+		{
+			joueurActif.repondreQuestion(q, reponse);
+		}
+		else
+		{
+			joueurActif.repondreQuestionCam(q, reponse);
+		}
+	}
+
+
 
 	public static Coord conversion(int nbreCase){
 		Coord coord=new Coord(0,0);

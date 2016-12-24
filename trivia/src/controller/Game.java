@@ -23,7 +23,7 @@ import model.Jeu;
 
 public class Game extends Observable {
 
-	public static Jeu jeu;
+	private static Jeu jeu;
 	private De de;
 	private int resultatDernierLancerDe;
 	
@@ -92,7 +92,7 @@ public class Game extends Observable {
 			 
 			//----- FIN CREATION CASES -----//
 		  	//-----Création du Jeu-----//
-			 jeu = new Jeu(4,4,3,cases,6,listeJoueurs,j1);
+			jeu = new Jeu(4,4,3,cases,6,listeJoueurs,j1);
 		}
 		if(!joueur2.trim().isEmpty() && !joueur2.equals("Joueur 2")) {
 			Joueur j2 = new Joueur(joueur2,2,new Pion("Rouge",1,new Coord(3,3)));
@@ -121,16 +121,12 @@ public class Game extends Observable {
 	
 	}
 	
-	//Lance le De
-	public int De(){
-		resultatDernierLancerDe = jeu.getJoueurActif().lancerDe();
-		System.out.println(resultatDernierLancerDe);
-		// return jeu.getJoueurActif().lancerDe();
-		return resultatDernierLancerDe;
+	
+	public static int De(){
+		return jeu.getJoueurActif().lancerDe();
+		
 		
 	}
-	
-	//Il faut les créer avant elles sont crées dans la création des joueurs, peut être à supprimer je pense
 	private void creationCases() {
 		
 	}

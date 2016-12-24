@@ -30,5 +30,30 @@ public class Main {
         //INITIALISATION DE LA DATABASE
         Database e = new Database();
         e.Derby();
+        
+        //TESTS
+        Pion p1 = new Pion("Bleu", 1, new Coord(5, 4));
+		    System.out.println(p1.toString());
+		    p1.seDeplacer(6, 3);
+		    System.out.println(p1.toString());
+	    	p1.seDeplacer(6, 3);
+		    System.out.println(p1.toString());
+		
+		
+	    	De d1 = new De();
+		    d1.lancer();
+		    System.out.println(d1.toString());
+        Pion p2 = new Pion("Bleu", 1, new Coord(1, 6));
+		    System.out.println(p2.toString());
+    
+        
+        Pion p7 = new Pion("Bleu", 1, new Coord(5, 6));
+        System.out.println(p7.toString());
+  
+        //test pose question
+        Pion pJoueur1 = new Pion("Bleue",1,new Coord(0,1));
+        Joueur j1 = new Joueur("URBE",1,pJoueur1);
+        AbstractCase case1 = new CaseNormale(Couleur.VERTE,0,1);
+
 	}
 }
