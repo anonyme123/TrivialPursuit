@@ -1,6 +1,18 @@
+//AUTEUR : Sebastien URBE- Claire DELORME
+
+
+//DESCRIPTION:
+//Creation d un dé utile au déplacement du joueur sur le plateau (nombre généré de maniere aléatoire)
+
+
+//INFO :
+//
+//
 package model;
 
 import java.util.Random;
+
+
 
 public class De {
 	int nbAleatoire;

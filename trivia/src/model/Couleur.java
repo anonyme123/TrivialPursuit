@@ -5,7 +5,6 @@
 
 //INFO : 
 //
-
 package model;
 public enum Couleur {
 	
@@ -29,6 +28,5 @@ public enum Couleur {
 	
 	public static Couleur getCouleur(int pos) {
 		return Couleur.values()[pos];
-		// return Couleur.VERTE;
 	}
 }

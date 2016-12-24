@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
 import java.util.Set;
+
+import javax.swing.JLabel;
 
 import model.AbstractCase;
 import model.CaseBonus;
@@ -18,12 +21,25 @@ import model.Joueur;
 import model.Pion;
 import model.Jeu;
 
-public class Game {
+public class Game extends Observable {
 
 	private static Jeu jeu;
 	private De de;
+	private int resultatDernierLancerDe;
 	
 	
+	public int getResultatDernierLancerDe() {
+		return resultatDernierLancerDe;
+	}
+
+	public De getDe() {
+		return de;
+	}
+
+	public void setDe(De de) {
+		this.de = de;
+	}
+
 	//-----Création de la liste de joueur-----//
 	private static List<Joueur> listeJoueurs = new ArrayList<Joueur>();
 	
@@ -293,9 +309,22 @@ public class Game {
 		 Pion monPion = new Pion("ROUGE", 1, new Coord(0,4));
 		 monPion.setModele(modele); // --> pour envoyer la map à la classe Pion
 	}
+
+	public boolean move(Coord coordArr) {
+		Pion pion = jeu.afficheJoueurActif().getPion();
+		System.out.println(pion);
+		// boolean result = pion.seDeplacer(coordArr.x, coordArr.y, this.getDe());
+		boolean result = pion.seDeplacer(coordArr.x, coordArr.y, this.resultatDernierLancerDe);
+		System.out.println(result);
+		if (result) {
+			this.setChanged();
+			this.notifyObservers();
+		}
+		return result;
+	}
+
 	
-	
-	
+		
 	/*public void lancerJeu(){
 		if (jeu !=  null) {
 			jeu.getJoueurActif();

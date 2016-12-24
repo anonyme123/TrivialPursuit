@@ -1,3 +1,13 @@
+//AUTEUR : Hugo TALBOT
+
+
+//DESCRIPTION:
+//Base de données permettant de gérer les questions à poser au joueur
+
+
+//INFO :
+//
+//
 package model;
 
 import java.sql.Connection;
@@ -7,7 +17,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import org.apache.derby.jdbc.EmbeddedDriver;
 
 public class Database {

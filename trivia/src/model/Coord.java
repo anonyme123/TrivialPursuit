@@ -1,16 +1,19 @@
+//AUTEUR : Sebastien URBE
+
+
+//DESCRIPTION:
+//Stocker valeurs X et Y définissant des coordonnées
+
+
+//INFO :
+//
+//
 package model;
 
 import java.io.Serializable;
 
-/**
- * Stocke les valeurs X et Y définissant des coordonnées.
- * @author Sébastien
- *
- */
 public class Coord implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	public int x, y;
 	
@@ -20,13 +23,11 @@ public class Coord implements Serializable {
 		this.y = y;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "[x=" + x + ", y=" + y + "]";
 	}
 	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -35,7 +36,6 @@ public class Coord implements Serializable {
 		result = prime * result + y;
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
